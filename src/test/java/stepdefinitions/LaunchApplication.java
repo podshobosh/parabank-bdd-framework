@@ -31,7 +31,7 @@ public class LaunchApplication {
         Assert.assertEquals("Page title verification failed!", expectedTitle, actualTitle);
 
         // Log success if titles match
-        Log.info("Page title verified successfully. Actual title: '{}'" + actualTitle);
+        Log.info("Page title verified successfully. Actual title: " + actualTitle);
     }
 
     @And("I close the browser")

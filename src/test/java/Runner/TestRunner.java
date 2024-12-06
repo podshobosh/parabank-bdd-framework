@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = "stepdefinitions",
+        glue = {"stepdefinitions", "hooks"},
         plugin = {                                  // Report and output plugins
                 "pretty",                               // Prints Gherkin steps in the console
                 "html:target/cucumber-reports.html",    // Generates an HTML report
@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber.xml"             // Generates a JUnit-compatible XML report
         },
 //        monochrome = false,
-//        tags =
+        tags = "@smoke or @regression",
         dryRun = false
 )
 public class TestRunner {

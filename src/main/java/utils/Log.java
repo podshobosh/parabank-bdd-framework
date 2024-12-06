@@ -23,7 +23,12 @@ public class Log {
         getLogger().debug(message);
     }
 
-    // Error log method
+    // Error log method (message only)
+    public static void error(String message) {
+        getLogger().error(message);
+    }
+
+    // Error log method (message + exception)
     public static void error(String message, Throwable throwable) {
         getLogger().error(message, throwable);
     }

@@ -1,18 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="FileAppender" fileName="logs/Logs-${date:yyyyMMdd}.log" immediateFlush="false"
-              append="true">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+        <!-- File Appender for smoke logs with dynamic, more readable file naming including timestamp -->
+        <File name="SmokeFileAppender" fileName="logs/smoke-${date:yyyy-MM-dd_HH-mm-ss_SSS}.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <!-- File Appender for regression logs with dynamic, more readable file naming including timestamp -->
+        <File name="RegressionFileAppender" fileName="logs/regression-${date:yyyy-MM-dd_HH-mm-ss_SSS}.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
+
     <Loggers>
         <Root level="debug">
             <AppenderRef ref="ConsoleAppender"/>
-            <AppenderRef ref="FileAppender"/>
+
+            <!-- Log to SmokeFileAppender only when log.tag is set to smoke -->
+            <AppenderRef ref="SmokeFileAppender" condition="${sys:log.tag} == 'smoke'"/>
+
+            <!-- Log to RegressionFileAppender only when log.regression.tag is set to regression -->
+            <AppenderRef ref="RegressionFileAppender" condition="${sys:log.regression.tag} == 'regression'"/>
         </Root>
     </Loggers>
 </Configuration>
