@@ -1,29 +1,45 @@
 <Configuration status="INFO">
     <Appenders>
+        <!-- Console Appender with Color Highlighting -->
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %highlight{%-5level}{FATAL=red, ERROR=red, WARN=yellow, INFO=green} %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <!-- File Appender for smoke logs with dynamic, more readable file naming including timestamp -->
-        <File name="SmokeFileAppender" fileName="logs/smoke-${date:yyyy-MM-dd_HH-mm-ss_SSS}.log" immediateFlush="false" append="true">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <!-- File Appender for General Test Logs -->
+        <File name="FileAppender" fileName="logs/TestLogs-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
 
-        <!-- File Appender for regression logs with dynamic, more readable file naming including timestamp -->
-        <File name="RegressionFileAppender" fileName="logs/regression-${date:yyyy-MM-dd_HH-mm-ss_SSS}.log" immediateFlush="false" append="true">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <!-- File Appender for Failed Tests Logs -->
+        <File name="FailedFileAppender" fileName="logs/FailedTests-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
+
+        <!-- SMTP Appender to Send Emails for ERROR Logs -->
+        <SMTP name="EmailAppender" subject="Test Automation - ERROR Notification" to="recipient@example.com"
+              from="sender@example.com" smtpHost="smtp.example.com" smtpPort="587"
+              smtpUsername="smtp_user" smtpPassword="smtp_password"
+              smtpProtocol="smtp" tls="true">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] %level: %msg%n"/>
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+        </SMTP>
     </Appenders>
 
     <Loggers>
-        <Root level="debug">
+        <!-- Root Logger Configuration with INFO level for general logs -->
+        <Root level="INFO">
             <AppenderRef ref="ConsoleAppender"/>
-
-            <!-- Log to SmokeFileAppender only when log.tag is set to smoke -->
-            <AppenderRef ref="SmokeFileAppender" condition="${sys:log.tag} == 'smoke'"/>
-
-            <!-- Log to RegressionFileAppender only when log.regression.tag is set to regression -->
-            <AppenderRef ref="RegressionFileAppender" condition="${sys:log.regression.tag} == 'regression'"/>
+            <AppenderRef ref="FileAppender"/>
         </Root>
+
+        <!-- Logger for Failed Scenario Logs with ERROR level -->
+        <Logger name="failedScenarioLogger" level="ERROR" additivity="false">
+            <AppenderRef ref="FailedFileAppender"/>
+        </Logger>
+
+        <!-- Logger for ERROR level logs to trigger email notifications -->
+        <Logger name="errorLogger" level="ERROR" additivity="false">
+            <AppenderRef ref="EmailAppender"/>
+        </Logger>
     </Loggers>
 </Configuration>

@@ -1,41 +1,39 @@
 package hooks;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
-import utils.Log;  // Assuming you have a Log class for custom logging
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import utils.Log;
 
 public class Hooks {
 
+    private static final Logger failedLogger = LogManager.getLogger("failedScenarioLogger");
+
     @Before
     public void beforeScenario(Scenario scenario) {
-        // Get the tags associated with the scenario
-        boolean hasSmokeTag = scenario.getSourceTagNames().contains("smoke");
-        boolean hasRegressionTag = scenario.getSourceTagNames().contains("regression");
+        // Extract scenario name and tags
+        String scenarioName = scenario.getName();
+        String tags = String.join(", ", scenario.getSourceTagNames());
 
-        // Log the scenario name and tags for visibility
-        Log.info("Scenario: " + scenario.getName() + " | Tags: " + scenario.getSourceTagNames());
+        // Log scenario details
+        Log.info("====================== STARTING SCENARIO ======================");
+        Log.info("Scenario: " + scenarioName);
+        Log.info("Tags: " + tags);
+        Log.info("===============================================================");
+    }
 
-        // Check if both tags are present
-        if (hasSmokeTag && hasRegressionTag) {
-            // If both tags are present, generate separate logs for smoke and regression
-            System.setProperty("log.tag", "smoke");
-            System.setProperty("log.regression.tag", "regression");
-            Log.info("Both @smoke and @regression tags found. Generating separate log files.");
-        } else if (hasSmokeTag) {
-            // If only the smoke tag is present
-            System.setProperty("log.tag", "smoke");
-            System.setProperty("log.regression.tag", "");  // Clear regression tag
-            Log.info("Smoke tag found. Generating smoke log.");
-        } else if (hasRegressionTag) {
-            // If only the regression tag is present
-            System.setProperty("log.tag", "");  // Clear smoke tag
-            System.setProperty("log.regression.tag", "regression");
-            Log.info("Regression tag found. Generating regression log.");
-        } else {
-            // For other tags, use a generic log file name
-            System.setProperty("log.tag", "Test Logs");
-            System.setProperty("log.regression.tag", "");  // Clear regression tag
-            Log.info("No specific tag found. Using default log file name.");
+    @After
+    public void afterScenario(Scenario scenario) {
+        // Log scenario status and end
+        Log.info("====================== ENDING SCENARIO ======================");
+        Log.info("Scenario Status: " + scenario.getStatus());
+        Log.info("=============================================================");
+
+        // Log failed scenarios to the failed logger
+        if (scenario.getStatus().toString().equalsIgnoreCase("FAILED")) {
+            failedLogger.error("Scenario failed: " + scenario.getName());
         }
     }
 }
