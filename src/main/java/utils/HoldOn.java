@@ -8,16 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Wait {
+public class HoldOn {
 
     private static int defaultWaitTime = ConfigReader.getIntProperty("default.wait.time");
     private static int pageLoadTimeout = ConfigReader.getIntProperty("page.load.timeout");
     private static int elementVisibilityTimeout = ConfigReader.getIntProperty("element.visibility.timeout");
 
     // Wait until element is visible
-    public static void waitForElementToBeVisible(WebDriver driver, By elementLocator) {
+    public static void waitForElementToBeVisible(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(elementVisibilityTimeout));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        wait.until(ExpectedConditions.visibilityOf(element));  // Wait until the element is visible
     }
 
     // Wait for page to load completely

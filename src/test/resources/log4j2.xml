@@ -16,13 +16,14 @@
         </File>
 
         <!-- SMTP Appender to Send Emails for ERROR Logs -->
+        <!--
         <SMTP name="EmailAppender" subject="Test Automation - ERROR Notification" to="recipient@example.com"
               from="sender@example.com" smtpHost="smtp.example.com" smtpPort="587"
-              smtpUsername="smtp_user" smtpPassword="smtp_password"
-              smtpProtocol="smtp" tls="true">
+              smtpUsername="smtp_user" smtpPassword="smtp_password" smtpProtocol="smtp" tls="true">
             <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] %level: %msg%n"/>
             <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
         </SMTP>
+        -->
     </Appenders>
 
     <Loggers>

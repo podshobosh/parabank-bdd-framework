@@ -12,7 +12,7 @@ public class LaunchApplication {
 
     private WebDriver driver = DriverFactory.getDriver(); // Get WebDriver from DriverFactory
 
-    @Given("I launch the application")
+    @Given("I am on the HomePage")
     public void iLaunchTheApplication() {
         // Log the action of launching the browser and navigating to the URL
         Log.info("Browser is launched and navigating to the application URL.");
@@ -32,12 +32,5 @@ public class LaunchApplication {
 
         // Log success if titles match
         Log.info("Page title verified successfully. Actual title: " + actualTitle);
-    }
-
-    @And("I close the browser")
-    public void iCloseTheBrowser() {
-        // Log the browser closing action
-        DriverFactory.quitDriver(); // Call the quit method from DriverFactory to close the browser
-        Log.info("Browser closed successfully.");
     }
 }
