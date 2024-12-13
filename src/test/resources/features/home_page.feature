@@ -5,7 +5,7 @@ Feature: Verifying HomePage Main Functionalities
     Given I am on the HomePage
     Then I should see the homepage loaded with the title "Home - My Digital Notebook"
 
-  @sanity
+  @regression
   Scenario: Verify the search button functionality
     Then the search button should be present
     When I click on the search button
