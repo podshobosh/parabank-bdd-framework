@@ -1,13 +1,15 @@
 Feature: Verifying HomePage Main Functionalities
   As a user, I want to verify that the HomePage functionalities work as expected, including navigation, search, and theme toggle features.
 
-  Background:
-    Given I am on the HomePage
-    Then I should see the homepage loaded with the title "Home - My Digital Notebook"
+  @UI
+  Scenario: Verify HomePage URL and Title
+    Then The page should have the title "Home - My Digital Notebook"
+    And The page URL should be "https://seleniums.com/"
 
-  @regression
-  Scenario: Verify the search button functionality
-    Then the search button should be present
+
+  @UI
+  Scenario: Verify the top page search functionality
+    Then the top search button should be present
     When I click on the search button
     Then the search box field should expand
     When I click on the x button the search box field should collapse
@@ -47,7 +49,7 @@ Feature: Verifying HomePage Main Functionalities
 #    When I click on the Login link
 #    Then I should be redirected to the Login page
 #
-#  Scenario: Verify the Forums link functionality
+#  Scenario: Verify the About me link functionality
 #    Then the Forums link should be present on the top left
 #    When I click on the Forums link
 #    Then I should be redirected to the Forums page

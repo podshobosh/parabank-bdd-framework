@@ -55,18 +55,10 @@ public class DriverFactory {
                 default:
                     throw new RuntimeException("Unsupported browser: " + browser);
             }
-
-            // Common configurations
-            driver.manage().deleteAllCookies();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.manage().window().maximize();
-            driver.get(ConfigReader.getProperty("url"));
-
         } catch (Exception e) {
             Log.error("Failed to initialize the WebDriver for browser: " + browser, e);
             throw new RuntimeException(e);
         }
-
         return driver;
     }
 
@@ -81,7 +73,7 @@ public class DriverFactory {
     // Method to quit the driver
     public static void quitDriver() {
         if (driver != null) {
-            Log.info("Closing the browser...");
+            Log.info("Tearing down the browser...");
             driver.quit();
             driver = null;
         }

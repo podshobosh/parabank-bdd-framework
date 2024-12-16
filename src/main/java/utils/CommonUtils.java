@@ -1,0 +1,63 @@
+package utils;
+
+import org.openqa.selenium.WebDriver;
+
+public class CommonUtils {
+
+    /**
+     * Verifies that the current URL matches the expected URL.
+     *
+     * @param driver       The WebDriver instance.
+     * @param expectedUrl  The expected URL to verify against.
+     * @throws RuntimeException if the URL does not match
+     */
+    public static void verifyUrl(WebDriver driver, String expectedUrl) {
+        // Get the current URL from the browser
+        String actualUrl = driver.getCurrentUrl();
+        // Normalize the expected URL: trim spaces and convert to lowercase
+        String normalizedExpectedUrl = expectedUrl.trim().toLowerCase();
+
+        // Log the action and the URLs
+        Log.info("Verifying the page URL.");
+        Log.info("Expected URL (normalized): " + normalizedExpectedUrl);
+        Log.info("Actual URL (normalized): " + actualUrl);
+
+        // Validate the URL
+        if (!actualUrl.equals(normalizedExpectedUrl)) {
+            Log.error("The page URL is incorrect!");
+            throw new RuntimeException("Expected URL: " + normalizedExpectedUrl + ", but got: " + actualUrl);
+        }
+
+        // Log success if URLs match
+        Log.info("Page URL verified successfully: " + actualUrl);
+    }
+
+    /**
+     * Verifies that the current page title matches the expected title (case-insensitive and trimmed).
+     *
+     * @param driver        The WebDriver instance.
+     * @param expectedTitle The expected title to verify against.
+     * @throws RuntimeException if the title does not match
+     */
+    public static void verifyTitle(WebDriver driver, String expectedTitle) {
+        // Get the current page title from the browser
+        String actualTitle = driver.getTitle().trim();
+
+        // Normalize the expected title: trim spaces and convert to lowercase
+        String normalizedExpectedTitle = expectedTitle.trim();
+
+        // Log the action and the titles
+        Log.info("Verifying the page title.");
+        Log.info("Expected Title (normalized): " + normalizedExpectedTitle);
+        Log.info("Actual Title (normalized): " + actualTitle);
+
+        // Validate the title
+        if (!actualTitle.equals(normalizedExpectedTitle)) {
+            Log.error("The page title is incorrect!");
+            throw new RuntimeException("Expected Title: \"" + normalizedExpectedTitle + "\", but got: \"" + actualTitle + "\"");
+        }
+
+        // Log success if titles match
+        Log.info("Page title verified successfully: " + actualTitle);
+    }
+}

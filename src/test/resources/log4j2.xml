@@ -39,8 +39,8 @@
         </Logger>
 
         <!-- Logger for ERROR level logs to trigger email notifications -->
-        <Logger name="errorLogger" level="ERROR" additivity="false">
-            <AppenderRef ref="EmailAppender"/>
-        </Logger>
+<!--        <Logger name="errorLogger" level="ERROR" additivity="false">-->
+<!--            <AppenderRef ref="EmailAppender"/>-->
+<!--        </Logger>-->
     </Loggers>
 </Configuration>
