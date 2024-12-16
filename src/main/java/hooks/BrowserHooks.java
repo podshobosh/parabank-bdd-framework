@@ -12,7 +12,7 @@ public class BrowserHooks {
 
     private WebDriver driver;
 
-    @Before("@UI") // Executes before each scenario tagged with @UI
+    @Before("@UI or @Test") // Executes before each scenario tagged with @UI
 
     public void setUpBrowser() {
         Log.info("Initializing browser setup...");

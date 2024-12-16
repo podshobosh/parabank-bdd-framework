@@ -35,29 +35,26 @@ public class HomePageStepDefinitions {
 
     // Step for verifying the search button is present
     @Then("the top search button should be present")
-    public void theTopSearchButtonShouldBePresent() {
+    public void verifyTopSearchButtonIsPresent() {
         homePage.verifyTopSearchIconVisible();
-        Log.info("Top search icon is verified to be visible.");
     }
 
     // Step to click the search button
     @When("I click on the search button")
     public void iClickOnTheSearchButton() {
         homePage.clickTopSearchIcon();
-        Log.info("Search button is clicked.");
     }
 
     // Step to verify the search box expands
     @Then("the search box field should expand")
-    public void theSearchBoxFieldShouldExpand() {
-        homePage.verifyTopSearchBoxIsVisible();
-        Log.info("Search box expanded and verified.");
+    public void topSearchBarState() {
+        homePage.topSearchBoxShouldBeOpen(true); // Expecting the search box to be open
     }
 
     // Step to verify the search box collapses
     @When("I click on the x button the search box field should collapse")
     public void theSearchBoxFieldShouldCollapse() {
-        homePage.verifyTopSearchBoxIsClosed();
-        Log.info("Search box collapsed and verified.");
+        homePage.clickTopSearchIcon();
+        homePage.topSearchBoxShouldBeOpen(false); // Expecting the search box to be closed
     }
 }

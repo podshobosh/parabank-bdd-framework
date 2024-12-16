@@ -1,14 +1,15 @@
 package utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CommonUtils {
 
     /**
      * Verifies that the current URL matches the expected URL.
      *
-     * @param driver       The WebDriver instance.
-     * @param expectedUrl  The expected URL to verify against.
+     * @param driver      The WebDriver instance.
+     * @param expectedUrl The expected URL to verify against.
      * @throws RuntimeException if the URL does not match
      */
     public static void verifyUrl(WebDriver driver, String expectedUrl) {
@@ -59,5 +60,21 @@ public class CommonUtils {
 
         // Log success if titles match
         Log.info("Page title verified successfully: " + actualTitle);
+    }
+
+    /**
+     * Gets the value of the specified attribute for a given WebElement.
+     *
+     * @param element   The WebElement from which to retrieve the attribute.
+     * @param attribute The attribute name (e.g., "class", "id", "placeholder").
+     * @return The value of the attribute, or null if the attribute is not found.
+     */
+    public static String getAttribute(WebElement element, String attribute) {
+        try {
+            return element.getAttribute(attribute);
+        } catch (Exception e) {
+            System.err.println("Failed to get attribute '" + attribute + "' from element: " + e.getMessage());
+            return null;
+        }
     }
 }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.CommonUtils;
 import utils.HoldOn;
 import utils.Log;
 
@@ -26,11 +27,7 @@ public class HomePage {
 
     // Top Search Box
     @FindBy(xpath = "//*[@id='navbarSupportedContent']/form/input")
-    private WebElement topSearchBox;
-
-    // Top Search Box Close Button
-    @FindBy(xpath = "//div[@id='navbarSupportedContent']/div/div[2]")
-    private WebElement closeTopSearchBox;
+    private WebElement topSearchInputBox;
 
     // Main Search Bar
     @FindBy(id = "searchInput")
@@ -52,52 +49,47 @@ public class HomePage {
 
     // Top Search Box
     public void verifyTopSearchBoxIsVisible() {
-        HoldOn.waitForElementToBeVisible(driver, topSearchBox);
+        HoldOn.waitForElementToBeVisible(driver, topSearchInputBox);
         Log.info("Verified that the top search box is visible.");
     }
 
     public void verifyTopSearchBoxIsClosed() {
-        HoldOn.waitForElementToBeVisible(driver, closeTopSearchBox);
-        closeTopSearchBox.click();
+        HoldOn.waitForElementToBeVisible(driver, topSearchBtnIcon);
+        topSearchBtnIcon.click();
         Log.info("Closed the top search box.");
     }
 
-    // Main Search Bar
-    public void verifyMainSearchBoxVisible() {
-        HoldOn.waitForElementToBeVisible(driver, mainSearchBar);
-        Log.info("Verified that the main search bar is visible.");
+    public String getTopSearchIconClassAttribute() {
+        Log.info("Attempting to retrieve the 'class' attribute of the top search icon.");
+        String classAttribute = CommonUtils.getAttribute(topSearchBtnIcon, "class");
+
+        if (classAttribute != null) {
+            Log.info("Successfully retrieved 'class' attribute: " + classAttribute);
+        } else {
+            Log.warn("The 'class' attribute could not be retrieved. Element may not be interactable.");
+        }
+        return classAttribute;
     }
 
-    // =================== Future Features ===================
-    // Uncomment and implement these methods as needed
+    /**
+     * Verifies the state of the search box (open or closed) based on the expected state.
+     *
+     * @param shouldBeOpen true if the search box is expected to be open, false if expected to be closed.
+     */
+    public void topSearchBoxShouldBeOpen(boolean shouldBeOpen) {
+        String classAttribute = getTopSearchIconClassAttribute();
+        boolean isExpanded = classAttribute != null && classAttribute.contains("show-close");
 
-    // Example for handling Main Menu
-    // @FindBy(id = "main-menu")
-    // private WebElement mainMenu;
-
-    // Example for handling Light/Dark Mode
-    // @FindBy(id = "theme-toggle")
-    // private WebElement themeToggleButton;
-
-    // public void toggleTheme() {
-    //     HoldOn.waitForElementToBeClickable(driver, themeToggleButton).click();
-    //     Log.info("Toggled the theme.");
-    // }
-
-    // Example for handling User Links (e.g., Register, Login)
-    // @FindBy(xpath = "//a[text()='Register']")
-    // private WebElement registerLink;
-
-    // @FindBy(xpath = "//a[text()='Login']")
-    // private WebElement loginLink;
-
-    // public void clickRegisterLink() {
-    //     HoldOn.waitForElementToBeClickable(driver, registerLink).click();
-    //     Log.info("Clicked on the Register link.");
-    // }
-
-    // public void clickLoginLink() {
-    //     HoldOn.waitForElementToBeClickable(driver, loginLink).click();
-    //     Log.info("Clicked on the Login link.");
-    // }
+        if (shouldBeOpen && isExpanded) {
+            Log.info("Search box is open as expected." + "Class Attribute: " + classAttribute);
+        } else if (!shouldBeOpen && !isExpanded) {
+            Log.info("Search box is closed as expected." + "Class Attribute: " + classAttribute);
+        } else {
+            String errorMessage = shouldBeOpen
+                    ? "Search box is not open when it should be."
+                    : "Search box is not closed when it should be.";
+            Log.error(errorMessage);
+            throw new AssertionError(errorMessage);
+        }
+    }
 }

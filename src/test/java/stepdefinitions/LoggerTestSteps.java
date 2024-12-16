@@ -3,7 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import utils.Log;
 
-public class LoggingStepDefinitions {
+public class LoggerTestSteps {
 
     // Create a logger instance for logging
 
