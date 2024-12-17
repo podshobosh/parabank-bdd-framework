@@ -38,7 +38,7 @@ public class ScreenshotUtils {
             // Copy the screenshot to the destination
             FileUtils.copyFile(srcFile, destFile);
 
-            Log.info("Screenshot saved at: " + destFile.getAbsolutePath());
+            Log.info("Screenshot saved at the designated directory");
             return destFile.getAbsolutePath();
         } catch (Exception e) {
             Log.error("Failed to capture screenshot for test: " + testName, e);
