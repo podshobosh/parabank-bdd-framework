@@ -1,0 +1,57 @@
+2024-12-16 21:31:33 [main] INFO  utils.Log - Initializing browser setup...
+2024-12-16 21:31:33 [main] INFO  utils.Log - Launching Chrome browser...
+2024-12-16 21:31:35 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2024-12-16 21:31:37 [main] INFO  utils.Log - Browser setup completed.
+2024-12-16 21:31:37 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2024-12-16 21:31:37 [main] INFO  utils.Log - Scenario: Verify HomePage URL and Title
+2024-12-16 21:31:37 [main] INFO  utils.Log - Tags: @UI
+2024-12-16 21:31:37 [main] INFO  utils.Log - ===============================================================
+2024-12-16 21:31:37 [main] INFO  utils.Log - Verifying the page title.
+2024-12-16 21:31:37 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2024-12-16 21:31:37 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2024-12-16 21:31:37 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2024-12-16 21:31:37 [main] INFO  utils.Log - HomePage Title Verification Completed
+2024-12-16 21:31:37 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\HomePage_Title_Verification_Completed_20241216_213137.png
+2024-12-16 21:31:37 [main] INFO  utils.Log - Verifying the page URL.
+2024-12-16 21:31:37 [main] INFO  utils.Log - Expected URL (normalized): https://seleniums.com/
+2024-12-16 21:31:37 [main] INFO  utils.Log - Actual URL (normalized): https://seleniums.com/
+2024-12-16 21:31:37 [main] INFO  utils.Log - Page URL verified successfully: https://seleniums.com/
+2024-12-16 21:31:37 [main] INFO  utils.Log - HomePage URL Verification Completed
+2024-12-16 21:31:38 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\HomePage_URL_Verification_Completed_20241216_213137.png
+2024-12-16 21:31:38 [main] INFO  utils.Log - Scenario passed: Verify HomePage URL and Title
+2024-12-16 21:31:38 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2024-12-16 21:31:38 [main] INFO  utils.Log - Scenario Status: PASSED
+2024-12-16 21:31:38 [main] INFO  utils.Log - =============================================================
+2024-12-16 21:31:38 [main] INFO  utils.Log - Tearing down the browser...
+2024-12-16 21:31:38 [main] INFO  utils.Log - Browser teardown completed.
+2024-12-16 21:31:38 [main] INFO  utils.Log - Initializing browser setup...
+2024-12-16 21:31:38 [main] INFO  utils.Log - Launching Chrome browser...
+2024-12-16 21:31:40 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2024-12-16 21:31:42 [main] INFO  utils.Log - Browser setup completed.
+2024-12-16 21:31:42 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2024-12-16 21:31:42 [main] INFO  utils.Log - Scenario: Verify the top page search functionality
+2024-12-16 21:31:42 [main] INFO  utils.Log - Tags: @UI
+2024-12-16 21:31:42 [main] INFO  utils.Log - ===============================================================
+2024-12-16 21:31:42 [main] INFO  utils.Log - Verified that the top search icon is visible.
+2024-12-16 21:31:42 [main] INFO  utils.Log - Top Search Button is Present
+2024-12-16 21:31:42 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\Top_Search_Button_is_Present_20241216_213142.png
+2024-12-16 21:31:43 [main] INFO  utils.Log - Clicked on the top search icon.
+2024-12-16 21:31:43 [main] INFO  utils.Log - Top Search Button Clicked
+2024-12-16 21:31:43 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\Top_Search_Button_Clicked_20241216_213143.png
+2024-12-16 21:31:43 [main] INFO  utils.Log - Attempting to retrieve the 'class' attribute of the top search icon.
+2024-12-16 21:31:43 [main] INFO  utils.Log - Successfully retrieved 'class' attribute: search-icon show-close
+2024-12-16 21:31:43 [main] INFO  utils.Log - Search box is open as expected.Class Attribute: search-icon show-close
+2024-12-16 21:31:43 [main] INFO  utils.Log - Search Box Field Expanded
+2024-12-16 21:31:43 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\Search_Box_Field_Expanded_20241216_213143.png
+2024-12-16 21:31:44 [main] INFO  utils.Log - Clicked on the top search icon.
+2024-12-16 21:31:44 [main] INFO  utils.Log - Attempting to retrieve the 'class' attribute of the top search icon.
+2024-12-16 21:31:44 [main] INFO  utils.Log - Successfully retrieved 'class' attribute: search-icon
+2024-12-16 21:31:44 [main] INFO  utils.Log - Search box is closed as expected.Class Attribute: search-icon
+2024-12-16 21:31:44 [main] INFO  utils.Log - Search Box Field Collapsed
+2024-12-16 21:31:44 [main] INFO  utils.Log - Screenshot saved at: C:\Users\Rahim\Desktop\Intellj\Selenium-BDD-Framework\screenshots\Search_Box_Field_Collapsed_20241216_213144.png
+2024-12-16 21:31:44 [main] INFO  utils.Log - Scenario passed: Verify the top page search functionality
+2024-12-16 21:31:44 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2024-12-16 21:31:44 [main] INFO  utils.Log - Scenario Status: PASSED
+2024-12-16 21:31:44 [main] INFO  utils.Log - =============================================================
+2024-12-16 21:31:44 [main] INFO  utils.Log - Tearing down the browser...
+2024-12-16 21:31:44 [main] INFO  utils.Log - Browser teardown completed.
