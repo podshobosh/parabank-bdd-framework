@@ -1,34 +1,34 @@
 Feature: Verifying HomePage Main Functionalities
   As a user, I want to verify that the HomePage functionalities work as expected, including navigation, search, and theme toggle features.
 
-  @UI
+
   Scenario: Verify HomePage URL and Title
     Then The page should have the title "Home - My Digital Notebook"
     And The page URL should be "https://seleniums.com/"
 
-  @UI
+
   Scenario: Verify the top page search functionality
     Then the top search button should be present
     When I click on the search button
     Then the search box field should expand
     When I click on the x button the search box field should collapse
 
-#  Scenario: Verify the light/dark mode toggle functionality
-#    Then the light/dark mode toggle button should be present
-#    When I click on the light/dark mode toggle button
-#    Then the theme color should change
-#
-#  Scenario: Verify the main menu contains 5 options, they are clickable, and navigate to relevant pages
-#    Then the main menu should contain 5 options: "Home", "My Notes", "Interview Questions", "Blog", "Forums"
-#    And each menu option should be clickable
-#    When I click on each menu option, it should take me to the relevant page with the correct title and URL:
-#      | Menu Option         | Relevant Page URL    | Page Title                                |
-#      | Home                | /                    | Home - My Digital Notebook                |
-#      | My Notes            | /my-notes            | My Notes - My Digital Notebook            |
-#      | Interview Questions | /interview-questions | Interview Questions - My Digital Notebook |
-#      | Blog                | /blog                | Blog - My Digital Notebook                |
-#      | Forums              | /forums              | Forums Archive - My Digital Notebook      |
-#
+  @Test
+  Scenario: Verify the main menu contains the correct options, they are clickable, and navigate to the expected pages.
+    Given the main menu contains the following options:
+      | Home                |
+      | My Notes            |
+      | Interview Questions |
+      | Blog                |
+      | Forums              |
+    Then all menu options should be displayed and clickable
+    When I click on each menu option
+      | Home                | https://www.seleniums.com/                                                         | Home - My Digital Notebook                |
+      | My Notes            | https://www.seleniums.com/automation/notes/               | My Notes - My Digital Notebook            |
+      | Interview Questions | https://www.seleniums.com/automation/interview-questions/ | Interview Questions - My Digital Notebook |
+      | Blog                | https://www.seleniums.com/blog/                           | Blog - My Digital Notebook                |
+      | Forums              | https://www.seleniums.com/forums/                         | Forums Archive - My Digital Notebook      |
+
 #  Scenario: Verify the main search feature is present
 #    Then the main search feature should be present
 #    And the search should contain a search box

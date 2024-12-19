@@ -20,7 +20,7 @@ public class BrowserHooks {
         driver.manage().deleteAllCookies(); // Clear cookies
         driver.manage().window().maximize(); // Maximize the browser window
 
-        String baseUrl = ConfigReader.getProperty("url");
+        String baseUrl = ConfigReader.getProperty("home.page.url");
         Log.info("Navigating to: " + baseUrl);
         driver.get(baseUrl); // Navigate to the base URL
 

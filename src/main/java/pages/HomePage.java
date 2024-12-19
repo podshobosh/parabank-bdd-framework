@@ -5,37 +5,39 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.CommonUtils;
 import utils.HoldOn;
 import utils.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage {
 
     private WebDriver driver;
 
-    // Constructor
     public HomePage(WebDriver driver) {
-        this.driver = DriverFactory.getDriver();  // Initialize driver from DriverFactory
-        PageFactory.initElements(driver, this);   // Initialize elements
+        this.driver = DriverFactory.getDriver();
+        PageFactory.initElements(driver, this);
     }
 
-    // =================== Locators ===================
-
-    // Top Search Button Icon
     @FindBy(xpath = "//*[@id='navbarSupportedContent']/div/div[2]")
     private WebElement topSearchBtnIcon;
 
-    // Top Search Box
     @FindBy(xpath = "//*[@id='navbarSupportedContent']/form/input")
     private WebElement topSearchInputBox;
 
-    // Main Search Bar
     @FindBy(id = "searchInput")
     private WebElement mainSearchBar;
 
-    // =================== Actions ===================
+    @FindBy(xpath = "//ul[@id='menu-main-menu']/li/a")
+    private List<WebElement> websiteMainMenu;
 
-    // Top Search Icon
+    @FindBy(xpath = "//ul[@id='menu-main-menu']")
+    private WebElement mainMenuElement;
+
+    @FindBy(xpath = "//*[@id='sticky']/div/a/img[2]")
+    private WebElement siteLogo;
+
     public void verifyTopSearchIconVisible() {
         HoldOn.waitForElementToBeVisible(driver, topSearchBtnIcon);
         Log.info("Verified that the top search icon is visible.");
@@ -47,7 +49,6 @@ public class HomePage {
         Log.info("Clicked on the top search icon.");
     }
 
-    // Top Search Box
     public void verifyTopSearchBoxIsVisible() {
         HoldOn.waitForElementToBeVisible(driver, topSearchInputBox);
         Log.info("Verified that the top search box is visible.");
@@ -60,30 +61,75 @@ public class HomePage {
     }
 
     public String getTopSearchIconClassAttribute() {
-        Log.info("Attempting to retrieve the 'class' attribute of the top search icon.");
-        String classAttribute = CommonUtils.getAttribute(topSearchBtnIcon, "class");
-
+        String classAttribute = topSearchBtnIcon.getAttribute("class");
         if (classAttribute != null) {
-            Log.info("Successfully retrieved 'class' attribute: " + classAttribute);
+            Log.info("Retrieved 'class' attribute: " + classAttribute);
         } else {
             Log.warn("The 'class' attribute could not be retrieved. Element may not be interactable.");
         }
         return classAttribute;
     }
 
-    /**
-     * Verifies the state of the search box (open or closed) based on the expected state.
-     *
-     * @param shouldBeOpen true if the search box is expected to be open, false if expected to be closed.
-     */
+    public WebElement siteLogo() {
+        return siteLogo;
+    }
+
+    public void clickSiteLogo() {
+        HoldOn.waitForElementToBeClickable(driver, siteLogo);
+        siteLogo.click();
+        Log.info("Clicked on the site logo.");
+    }
+
+    public void clickMainMenuItemByName(String itemName) {
+        for (WebElement menuItem : websiteMainMenu) {
+            if (menuItem.getText().trim().equalsIgnoreCase(itemName)) {
+                HoldOn.waitForElementToBeClickable(driver, menuItem);
+                menuItem.click();
+                Log.info("Clicked on menu item: " + itemName);
+                return;
+            }
+        }
+        throw new RuntimeException("Menu item with name '" + itemName + "' not found.");
+    }
+
+    public WebElement getMainMenuElement() {
+        HoldOn.waitForElementToBeVisible(driver, mainMenuElement);
+        Log.info("Retrieved main menu element.");
+        return mainMenuElement;
+    }
+
+    public List<String> getMainMenuItemsText() {
+        List<String> menuItemsText = new ArrayList<>();
+        HoldOn.waitForElementToBeVisible(driver, mainMenuElement);
+
+        for (WebElement menuItem : websiteMainMenu) {
+            String text = menuItem.getText().trim();
+            menuItemsText.add(text);
+            Log.info("Retrieved menu item text: " + text);
+        }
+
+        Log.info("All menu items text retrieved: " + menuItemsText);
+        return menuItemsText;
+    }
+
+    public boolean isMainMenuItemDisplayedAndClickable(String menuItemText) {
+        for (WebElement menuItem : websiteMainMenu) {
+            if (menuItem.getText().trim().equalsIgnoreCase(menuItemText)) {
+                HoldOn.waitForElementToBeVisible(driver, menuItem);
+                return menuItem.isDisplayed() && menuItem.isEnabled();
+            }
+        }
+        throw new RuntimeException("Menu item with name '" + menuItemText + "' not found.");
+    }
+
     public void topSearchBoxShouldBeOpen(boolean shouldBeOpen) {
         String classAttribute = getTopSearchIconClassAttribute();
         boolean isExpanded = classAttribute != null && classAttribute.contains("show-close");
 
         if (shouldBeOpen && isExpanded) {
-            Log.info("Search box is open as expected." + "Class Attribute: " + classAttribute);
+            Log.info("Search box is open as expected. Class Attribute: " + classAttribute);
         } else if (!shouldBeOpen && !isExpanded) {
-            Log.info("Search box is closed as expected." + "Class Attribute: " + classAttribute);
+            Log.info("Search box is closed as expected. Class Attribute: " + classAttribute);
         } else {
             String errorMessage = shouldBeOpen
                     ? "Search box is not open when it should be."
@@ -91,5 +137,10 @@ public class HomePage {
             Log.error(errorMessage);
             throw new AssertionError(errorMessage);
         }
+    }
+
+    private boolean isOnHomePage() {
+        String currentUrl = driver.getCurrentUrl();
+        return "https://www.seleniums.com/".equals(currentUrl);
     }
 }
