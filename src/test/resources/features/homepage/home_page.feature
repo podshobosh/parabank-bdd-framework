@@ -1,19 +1,19 @@
 Feature: Verifying HomePage Main Functionalities
   As a user, I want to verify that the HomePage functionalities work as expected, including navigation, search, and theme toggle features.
 
-
+  @UI
   Scenario: Verify HomePage URL and Title
     Then The page should have the title "Home - My Digital Notebook"
     And The page URL should be "https://seleniums.com/"
 
-
+  @UI
   Scenario: Verify the top page search functionality
     Then the top search button should be present
     When I click on the search button
     Then the search box field should expand
     When I click on the x button the search box field should collapse
 
-  @Test
+  @UI
   Scenario: Verify the main menu contains the correct options, they are clickable, and navigate to the expected pages.
     Given the main menu contains the following options:
       | Home                |
