@@ -1,0 +1,10 @@
+2025-09-26 15:44:40 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-09-26 15:44:40 [main] INFO  utils.Log - Scenario: Verify My Notes Tab fields
+2025-09-26 15:44:40 [main] INFO  utils.Log - Tags: @Testcase1
+2025-09-26 15:44:40 [main] INFO  utils.Log - ===============================================================
+2025-09-26 15:44:40 [main] INFO  utils.Log - Launching Chrome browser...
+2025-09-26 15:44:43 [main] ERROR utils.Log - Scenario failed: Verify My Notes Tab fields
+2025-09-26 15:44:43 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-09-26 15:44:43 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-09-26 15:44:43 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-09-26 15:44:43 [main] INFO  utils.Log - =============================================================

@@ -1,0 +1,200 @@
+2025-09-25 14:23:00 [main] INFO  utils.Log - Initializing browser setup...
+2025-09-25 14:23:00 [main] INFO  utils.Log - Launching Chrome browser...
+2025-09-25 14:23:02 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-09-25 14:23:03 [main] INFO  utils.Log - Browser setup completed.
+2025-09-25 14:23:03 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-09-25 14:23:03 [main] INFO  utils.Log - Scenario: Verify HomePage URL and Title
+2025-09-25 14:23:03 [main] INFO  utils.Log - Tags: @UI
+2025-09-25 14:23:03 [main] INFO  utils.Log - ===============================================================
+2025-09-25 14:23:03 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:03 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:03 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:03 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:03 [main] INFO  utils.Log - HomePage Title Verification Completed
+2025-09-25 14:23:04 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-09-25 14:23:04 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:04 [main] INFO  utils.Log - Expected URL (normalized): https://seleniums.com/
+2025-09-25 14:23:04 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:04 [main] ERROR utils.Log - The page URL is incorrect!
+2025-09-25 14:23:04 [main] ERROR utils.Log - Scenario failed: Verify HomePage URL and Title
+2025-09-25 14:23:04 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-09-25 14:23:04 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-09-25 14:23:04 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-09-25 14:23:04 [main] INFO  utils.Log - =============================================================
+2025-09-25 14:23:04 [main] INFO  utils.Log - Tearing down the browser...
+2025-09-25 14:23:04 [main] INFO  utils.Log - Browser teardown completed.
+2025-09-25 14:23:04 [main] INFO  utils.Log - Initializing browser setup...
+2025-09-25 14:23:04 [main] INFO  utils.Log - Launching Chrome browser...
+2025-09-25 14:23:05 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-09-25 14:23:07 [main] INFO  utils.Log - Browser setup completed.
+2025-09-25 14:23:07 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-09-25 14:23:07 [main] INFO  utils.Log - Scenario: Verify the top page search functionality
+2025-09-25 14:23:07 [main] INFO  utils.Log - Tags: @UI
+2025-09-25 14:23:07 [main] INFO  utils.Log - ===============================================================
+2025-09-25 14:23:07 [main] INFO  utils.Log - Verified that the top search icon is visible.
+2025-09-25 14:23:07 [main] INFO  utils.Log - Top Search Button is Present
+2025-09-25 14:23:07 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-09-25 14:23:08 [main] INFO  utils.Log - Clicked on the top search icon.
+2025-09-25 14:23:08 [main] INFO  utils.Log - Top Search Button Clicked
+2025-09-25 14:23:08 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-09-25 14:23:08 [main] INFO  utils.Log - Retrieved 'class' attribute: search-icon show-close
+2025-09-25 14:23:08 [main] INFO  utils.Log - Search box is open as expected. Class Attribute: search-icon show-close
+2025-09-25 14:23:08 [main] INFO  utils.Log - Search Box Field Expanded
+2025-09-25 14:23:09 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-09-25 14:23:09 [main] INFO  utils.Log - Clicked on the top search icon.
+2025-09-25 14:23:09 [main] INFO  utils.Log - Retrieved 'class' attribute: search-icon
+2025-09-25 14:23:09 [main] INFO  utils.Log - Search box is closed as expected. Class Attribute: search-icon
+2025-09-25 14:23:09 [main] INFO  utils.Log - Search Box Field Collapsed
+2025-09-25 14:23:09 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-09-25 14:23:09 [main] INFO  utils.Log - Scenario passed: Verify the top page search functionality
+2025-09-25 14:23:09 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-09-25 14:23:09 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-09-25 14:23:09 [main] INFO  utils.Log - =============================================================
+2025-09-25 14:23:09 [main] INFO  utils.Log - Tearing down the browser...
+2025-09-25 14:23:09 [main] INFO  utils.Log - Browser teardown completed.
+2025-09-25 14:23:09 [main] INFO  utils.Log - Initializing browser setup...
+2025-09-25 14:23:09 [main] INFO  utils.Log - Launching Chrome browser...
+2025-09-25 14:23:11 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-09-25 14:23:12 [main] INFO  utils.Log - Browser setup completed.
+2025-09-25 14:23:12 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-09-25 14:23:12 [main] INFO  utils.Log - Scenario: Verify the main menu contains the correct options, they are clickable, and navigate to the expected pages.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Tags: @UI
+2025-09-25 14:23:12 [main] INFO  utils.Log - ===============================================================
+2025-09-25 14:23:12 [main] INFO  utils.Log - Step started: Verifying that the main menu contains the expected options.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Expected menu options from feature file: [Home, My Notes, Interview Questions, Blog, Forums]
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved main menu element.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Main menu is visible.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Home
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: My Notes
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Interview Questions
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Blog
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Forums
+2025-09-25 14:23:12 [main] INFO  utils.Log - All menu items text retrieved: [Home, My Notes, Interview Questions, Blog, Forums]
+2025-09-25 14:23:12 [main] INFO  utils.Log - Actual menu options retrieved from the page: [Home, My Notes, Interview Questions, Blog, Forums]
+2025-09-25 14:23:12 [main] INFO  utils.Log - Number of menu options matches the expected count.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Verified menu option text at index 0: Home
+2025-09-25 14:23:12 [main] INFO  utils.Log - Verified menu option text at index 1: My Notes
+2025-09-25 14:23:12 [main] INFO  utils.Log - Verified menu option text at index 2: Interview Questions
+2025-09-25 14:23:12 [main] INFO  utils.Log - Verified menu option text at index 3: Blog
+2025-09-25 14:23:12 [main] INFO  utils.Log - Verified menu option text at index 4: Forums
+2025-09-25 14:23:12 [main] INFO  utils.Log - Step completed successfully: Main menu contains the expected options.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Step started: Verifying that all menu options are displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved main menu element.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Main menu is visible.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Home
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: My Notes
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Interview Questions
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Blog
+2025-09-25 14:23:12 [main] INFO  utils.Log - Retrieved menu item text: Forums
+2025-09-25 14:23:12 [main] INFO  utils.Log - All menu items text retrieved: [Home, My Notes, Interview Questions, Blog, Forums]
+2025-09-25 14:23:12 [main] INFO  utils.Log - Menu item 'Home' is displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Menu item 'My Notes' is displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Menu item 'Interview Questions' is displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Menu item 'Blog' is displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Menu item 'Forums' is displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Step completed successfully: All menu options are displayed and clickable.
+2025-09-25 14:23:12 [main] INFO  utils.Log - Step started: Verifying navigation for each menu option.
+2025-09-25 14:23:12 [main] INFO  utils.Log - User is already on the Home page. Skipping initial logo click.
+2025-09-25 14:23:13 [main] INFO  utils.Log - Clicked on menu item: Home
+2025-09-25 14:23:13 [main] INFO  utils.Log - Clicked on menu option: Home
+2025-09-25 14:23:13 [main] INFO  utils.Log - Actual URL after clicking 'Home': https://www.seleniums.com/
+2025-09-25 14:23:13 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:13 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:13 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:13 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/
+2025-09-25 14:23:13 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:13 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:13 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:13 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:13 [main] INFO  utils.Log - Skipped returning to Home page for the first iteration.
+2025-09-25 14:23:15 [main] INFO  utils.Log - Clicked on menu item: My Notes
+2025-09-25 14:23:15 [main] INFO  utils.Log - Clicked on menu option: My Notes
+2025-09-25 14:23:15 [main] INFO  utils.Log - Actual URL after clicking 'My Notes': https://www.seleniums.com/automation/notes/
+2025-09-25 14:23:15 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:15 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/automation/notes/
+2025-09-25 14:23:15 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/automation/notes/
+2025-09-25 14:23:15 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/automation/notes/
+2025-09-25 14:23:15 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:15 [main] INFO  utils.Log - Expected Title (normalized): My Notes - My Digital Notebook
+2025-09-25 14:23:15 [main] INFO  utils.Log - Actual Title (normalized): My Notes - My Digital Notebook
+2025-09-25 14:23:15 [main] INFO  utils.Log - Page title verified successfully: My Notes - My Digital Notebook
+2025-09-25 14:23:16 [main] INFO  utils.Log - Clicked on the site logo.
+2025-09-25 14:23:16 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:16 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:16 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:16 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/
+2025-09-25 14:23:16 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:16 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:16 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:16 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:16 [main] INFO  utils.Log - Returned to Home page after verifying menu option: My Notes
+2025-09-25 14:23:18 [main] INFO  utils.Log - Clicked on menu item: Interview Questions
+2025-09-25 14:23:18 [main] INFO  utils.Log - Clicked on menu option: Interview Questions
+2025-09-25 14:23:18 [main] INFO  utils.Log - Actual URL after clicking 'Interview Questions': https://www.seleniums.com/automation/interview-questions/
+2025-09-25 14:23:18 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:18 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/automation/interview-questions/
+2025-09-25 14:23:18 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/automation/interview-questions/
+2025-09-25 14:23:18 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/automation/interview-questions/
+2025-09-25 14:23:18 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:18 [main] INFO  utils.Log - Expected Title (normalized): Interview Questions - My Digital Notebook
+2025-09-25 14:23:18 [main] INFO  utils.Log - Actual Title (normalized): Interview Questions - My Digital Notebook
+2025-09-25 14:23:18 [main] INFO  utils.Log - Page title verified successfully: Interview Questions - My Digital Notebook
+2025-09-25 14:23:19 [main] INFO  utils.Log - Clicked on the site logo.
+2025-09-25 14:23:19 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:19 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:19 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:19 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/
+2025-09-25 14:23:19 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:19 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:19 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:19 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:19 [main] INFO  utils.Log - Returned to Home page after verifying menu option: Interview Questions
+2025-09-25 14:23:21 [main] INFO  utils.Log - Clicked on menu item: Blog
+2025-09-25 14:23:21 [main] INFO  utils.Log - Clicked on menu option: Blog
+2025-09-25 14:23:21 [main] INFO  utils.Log - Actual URL after clicking 'Blog': https://www.seleniums.com/blog/
+2025-09-25 14:23:21 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:21 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/blog/
+2025-09-25 14:23:21 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/blog/
+2025-09-25 14:23:21 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/blog/
+2025-09-25 14:23:21 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:21 [main] INFO  utils.Log - Expected Title (normalized): Blog - My Digital Notebook
+2025-09-25 14:23:21 [main] INFO  utils.Log - Actual Title (normalized): Blog - My Digital Notebook
+2025-09-25 14:23:21 [main] INFO  utils.Log - Page title verified successfully: Blog - My Digital Notebook
+2025-09-25 14:23:22 [main] INFO  utils.Log - Clicked on the site logo.
+2025-09-25 14:23:22 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:22 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:22 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:22 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/
+2025-09-25 14:23:22 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:22 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:22 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:22 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:22 [main] INFO  utils.Log - Returned to Home page after verifying menu option: Blog
+2025-09-25 14:23:24 [main] INFO  utils.Log - Clicked on menu item: Forums
+2025-09-25 14:23:24 [main] INFO  utils.Log - Clicked on menu option: Forums
+2025-09-25 14:23:24 [main] INFO  utils.Log - Actual URL after clicking 'Forums': https://www.seleniums.com/forums/
+2025-09-25 14:23:24 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:24 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/forums/
+2025-09-25 14:23:24 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/forums/
+2025-09-25 14:23:24 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/forums/
+2025-09-25 14:23:24 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:24 [main] INFO  utils.Log - Expected Title (normalized): Forums Archive - My Digital Notebook
+2025-09-25 14:23:24 [main] INFO  utils.Log - Actual Title (normalized): Forums Archive - My Digital Notebook
+2025-09-25 14:23:24 [main] INFO  utils.Log - Page title verified successfully: Forums Archive - My Digital Notebook
+2025-09-25 14:23:25 [main] INFO  utils.Log - Clicked on the site logo.
+2025-09-25 14:23:25 [main] INFO  utils.Log - Verifying the page URL.
+2025-09-25 14:23:25 [main] INFO  utils.Log - Expected URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:25 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-09-25 14:23:25 [main] INFO  utils.Log - Page URL verified successfully: https://www.seleniums.com/
+2025-09-25 14:23:25 [main] INFO  utils.Log - Verifying the page title.
+2025-09-25 14:23:25 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:25 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-09-25 14:23:25 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-09-25 14:23:25 [main] INFO  utils.Log - Returned to Home page after verifying menu option: Forums
+2025-09-25 14:23:25 [main] INFO  utils.Log - Step completed successfully: Verified navigation for all menu options.
+2025-09-25 14:23:25 [main] INFO  utils.Log - Scenario passed: Verify the main menu contains the correct options, they are clickable, and navigate to the expected pages.
+2025-09-25 14:23:25 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-09-25 14:23:25 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-09-25 14:23:25 [main] INFO  utils.Log - =============================================================
+2025-09-25 14:23:25 [main] INFO  utils.Log - Tearing down the browser...
+2025-09-25 14:23:25 [main] INFO  utils.Log - Browser teardown completed.

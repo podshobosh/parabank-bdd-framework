@@ -1,7 +1,7 @@
 Feature: Verifying HomePage Main Functionalities
   As a user, I want to verify that the HomePage functionalities work as expected, including navigation, search, and theme toggle features.
 
-  @UI
+  @UI @Regression @smoke
   Scenario: Verify HomePage URL and Title
     Then The page should have the title "Home - My Digital Notebook"
     And The page URL should be "https://seleniums.com/"
@@ -23,11 +23,15 @@ Feature: Verifying HomePage Main Functionalities
       | Forums              |
     Then all menu options should be displayed and clickable
     When I click on each menu option
-      | Home                | https://www.seleniums.com/                                                         | Home - My Digital Notebook                |
+      | Home                | https://www.seleniums.com/                                | Home - My Digital Notebook                |
       | My Notes            | https://www.seleniums.com/automation/notes/               | My Notes - My Digital Notebook            |
       | Interview Questions | https://www.seleniums.com/automation/interview-questions/ | Interview Questions - My Digital Notebook |
       | Blog                | https://www.seleniums.com/blog/                           | Blog - My Digital Notebook                |
       | Forums              | https://www.seleniums.com/forums/                         | Forums Archive - My Digital Notebook      |
+
+
+
+
 
 #  Scenario: Verify the main search feature is present
 #    Then the main search feature should be present
