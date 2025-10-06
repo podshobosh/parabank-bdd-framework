@@ -54,7 +54,7 @@ public class MyNotesPage {
     public void clickMyNotesLink() {
         HoldOn.safeClick(driver, myNotesLink);
         Log.info("Verified that the My Notes Tab is visible.");
-        HoldOn.safeClick(driver, myNotesLink);
+
 
         // Wait for preloader to disappear after navigation
         HoldOn.waitForPreloaderToDisappear(driver);
