@@ -29,21 +29,21 @@ Feature: Verifying HomePage Main Functionalities
       | Blog                | https://www.seleniums.com/blog/                           | Blog - My Digital Notebook                |
       | Forums              | https://www.seleniums.com/forums/                         | Forums Archive - My Digital Notebook      |
 
+  @UI @smoke1
+  Scenario Outline: Verify the website logo functionality
+    Given user is on the home page
+    Then the website logo should be present on the top left of the page
+    When the user navigates to "<menuOption>" page
+    And user clicks on the website logo
+    Then user should be redirected to the HomePage
 
+    Examples:
+      | menuOption          |
+      | My Notes            |
+      | Interview Questions |
+      | Blog                |
+      | Forums              |
 
-
-
-#  Scenario: Verify the main search feature is present
-#    Then the main search feature should be present
-#    And the search should contain a search box
-#    And the search box should have a dropdown with items to its right
-#    And there should be tags underneath the search box as suggestions to users
-#
-#  Scenario: Verify the website logo functionality
-#    Then the website logo should be present on the top left of the page
-#    When I click on the website logo
-#    Then I should be redirected to the HomePage
-#
 #  Scenario: Verify the Register and Login links functionality
 #    Then the Register link should be present on the top right
 #    And the Login link should be present on the top right

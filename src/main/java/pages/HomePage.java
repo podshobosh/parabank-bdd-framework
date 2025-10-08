@@ -88,13 +88,22 @@ public class HomePage {
         return siteLogo;
     }
 
+    public boolean isWebsiteLogoVisible(){
+        HoldOn.waitForPreloaderToDisappear(driver);
+        HoldOn.waitForElementToBeVisible(driver, siteLogo);
+        return siteLogo.isDisplayed();
+    }
+
     public void clickSiteLogo() {
+        HoldOn.waitForPreloaderToDisappear(driver);
         HoldOn.waitForElementToBeClickable(driver, siteLogo);
         siteLogo.click();
         Log.info("Clicked on the site logo.");
     }
 
     public void clickMainMenuItemByName(String itemName) {
+        HoldOn.waitForPreloaderToDisappear(driver);
+
         for (WebElement menuItem : websiteMainMenu) {
             if (menuItem.getText().trim().equalsIgnoreCase(itemName)) {
                 HoldOn.waitForElementToBeClickable(driver, menuItem);

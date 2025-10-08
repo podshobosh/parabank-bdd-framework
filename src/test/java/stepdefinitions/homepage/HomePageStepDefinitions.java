@@ -1,5 +1,6 @@
 package stepdefinitions.homepage;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -73,4 +74,23 @@ public class HomePageStepDefinitions {
         homePage.topSearchBoxShouldBeOpen(false);
         logAndCapture("Search Box Field Collapsed");
     }
+
+    @Then("the website logo should be present on the top left of the page")
+    public void the_website_logo_should_be_present_on_the_top_left_of_the_page() {
+        Assert.assertTrue("webiste logo not visibl",homePage.isWebsiteLogoVisible());
+    }
+    @When("the user navigates to {string} page")
+    public void the_user_navigates_to_page(String menuItem) {
+        homePage.clickMainMenuItemByName(menuItem);
+
+    }
+    @When("user clicks on the website logo")
+    public void user_clicks_on_the_website_logo() {
+        homePage.clickSiteLogo();
+    }
+    @Then("user should be redirected to the HomePage")
+    public void user_should_be_redirected_to_the_home_page() {
+        Assert.assertTrue(homePage.isOnHomePage());
+    }
+
 }
