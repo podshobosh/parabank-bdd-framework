@@ -77,7 +77,7 @@ public class HomePageStepDefinitions {
 
     @Then("the website logo should be present on the top left of the page")
     public void the_website_logo_should_be_present_on_the_top_left_of_the_page() {
-        Assert.assertTrue("webiste logo not visibl",homePage.isWebsiteLogoVisible());
+        Assert.assertTrue("website logo not visible",homePage.isWebsiteLogoVisible());
     }
     @When("the user navigates to {string} page")
     public void the_user_navigates_to_page(String menuItem) {
