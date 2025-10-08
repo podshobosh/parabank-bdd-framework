@@ -1,6 +1,8 @@
 package pages;
 
 import factory.DriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,6 +39,18 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id='sticky']/div/a/img[2]")
     private WebElement siteLogo;
+
+
+    public void sendTermToSearchBox(String term) {
+        HoldOn.waitForElementToBeVisible(driver, mainSearchBar);
+        mainSearchBar.sendKeys(term);
+        Log.info("Sent search term into the search box.");
+    }
+
+    public void clickEnterInSearchBox() {
+        mainSearchBar.sendKeys(Keys.ENTER);
+    }
+
 
     public void verifyTopSearchIconVisible() {
         HoldOn.waitForElementToBeVisible(driver, topSearchBtnIcon);
@@ -139,7 +153,7 @@ public class HomePage {
         }
     }
 
-    private boolean isOnHomePage() {
+    public boolean isOnHomePage() {
         String currentUrl = driver.getCurrentUrl();
         return "https://www.seleniums.com/".equals(currentUrl);
     }
