@@ -1,0 +1,30 @@
+2025-10-07 12:09:05 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-07 12:09:05 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-07 12:09:06 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-07 12:09:09 [main] INFO  utils.Log - Browser setup completed.
+2025-10-07 12:09:09 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-07 12:09:09 [main] INFO  utils.Log - Scenario: Verify user is able to enter search terms and able to see valid search results
+2025-10-07 12:09:09 [main] INFO  utils.Log - Tags: @UI, @SearchFunc
+2025-10-07 12:09:09 [main] INFO  utils.Log - ===============================================================
+2025-10-07 12:09:10 [main] INFO  utils.Log - Sent search term into the search box.
+2025-10-07 12:09:12 [main] INFO  utils.Log - Scenario passed: Verify user is able to enter search terms and able to see valid search results
+2025-10-07 12:09:12 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-07 12:09:12 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-07 12:09:12 [main] INFO  utils.Log - =============================================================
+2025-10-07 12:09:12 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-07 12:09:12 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-07 12:09:12 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-07 12:09:12 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-07 12:09:13 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-07 12:09:14 [main] INFO  utils.Log - Browser setup completed.
+2025-10-07 12:09:14 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-07 12:09:14 [main] INFO  utils.Log - Scenario: Verify user is able to enter search terms and able to see valid search results
+2025-10-07 12:09:14 [main] INFO  utils.Log - Tags: @UI, @SearchFunc
+2025-10-07 12:09:14 [main] INFO  utils.Log - ===============================================================
+2025-10-07 12:09:14 [main] INFO  utils.Log - Sent search term into the search box.
+2025-10-07 12:09:15 [main] INFO  utils.Log - Scenario passed: Verify user is able to enter search terms and able to see valid search results
+2025-10-07 12:09:15 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-07 12:09:15 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-07 12:09:15 [main] INFO  utils.Log - =============================================================
+2025-10-07 12:09:15 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-07 12:09:15 [main] INFO  utils.Log - Browser teardown completed.

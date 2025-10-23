@@ -1,0 +1,15 @@
+2025-09-26 21:24:39 [main] INFO  utils.Log - Initializing browser setup...
+2025-09-26 21:24:39 [main] INFO  utils.Log - Launching Chrome browser...
+2025-09-26 21:24:40 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-09-26 21:24:42 [main] INFO  utils.Log - Browser setup completed.
+2025-09-26 21:24:42 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-09-26 21:24:42 [main] INFO  utils.Log - Scenario: Verify My Notes Tab fields
+2025-09-26 21:24:42 [main] INFO  utils.Log - Tags: @UI, @TestCase1
+2025-09-26 21:24:42 [main] INFO  utils.Log - ===============================================================
+2025-09-26 21:24:42 [main] ERROR utils.Log - Scenario failed: Verify My Notes Tab fields
+2025-09-26 21:24:43 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-09-26 21:24:43 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-09-26 21:24:43 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-09-26 21:24:43 [main] INFO  utils.Log - =============================================================
+2025-09-26 21:24:43 [main] INFO  utils.Log - Tearing down the browser...
+2025-09-26 21:24:43 [main] INFO  utils.Log - Browser teardown completed.

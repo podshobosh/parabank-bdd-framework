@@ -1,0 +1,18 @@
+2025-10-02 14:01:54 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 14:01:54 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 14:01:57 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 14:01:59 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 14:01:59 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 14:01:59 [main] INFO  utils.Log - Scenario: Verify My Notes Tab fields
+2025-10-02 14:01:59 [main] INFO  utils.Log - Tags: @UI, @TestCase1
+2025-10-02 14:01:59 [main] INFO  utils.Log - ===============================================================
+2025-10-02 14:01:59 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 14:02:00 [main] INFO  utils.Log - Topic links are present
+2025-10-02 14:02:02 [main] INFO  utils.Log - Clicked on Selenium link
+2025-10-02 14:02:02 [main] INFO  utils.Log - Verified that on selenium page
+2025-10-02 14:02:02 [main] INFO  utils.Log - Scenario passed: Verify My Notes Tab fields
+2025-10-02 14:02:02 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 14:02:02 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-02 14:02:02 [main] INFO  utils.Log - =============================================================
+2025-10-02 14:02:07 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 14:02:07 [main] INFO  utils.Log - Browser teardown completed.

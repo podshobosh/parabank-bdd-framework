@@ -1,0 +1,144 @@
+2025-10-06 11:19:12 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:19:12 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:19:13 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:19:16 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:19:16 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:19:16 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:19:16 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:19:16 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:19:18 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:19:27 [main] INFO  utils.Log - Clicked on Seleniumlink
+2025-10-06 11:19:28 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:19:28 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:19:28 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:19:28 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:19:28 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:19:29 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:19:29 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:19:29 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:19:30 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:19:31 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:19:31 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:19:31 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:19:31 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:19:31 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:19:32 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:19:40 [main] INFO  utils.Log - Clicked on Javalink
+2025-10-06 11:19:42 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:19:42 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:19:42 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:19:42 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:19:42 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:19:43 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:19:43 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:19:43 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:19:43 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:19:44 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:19:44 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:19:44 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:19:44 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:19:44 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:19:46 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:19:51 [main] INFO  utils.Log - Clicked on SQLlink
+2025-10-06 11:19:52 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:19:52 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:19:52 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:19:52 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:19:52 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:19:53 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:19:53 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:19:53 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:19:54 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:19:54 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:19:54 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:19:54 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:19:54 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:19:54 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:19:56 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:02 [main] INFO  utils.Log - Clicked on Cucumberlink
+2025-10-06 11:20:03 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:03 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:03 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:03 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:03 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:03 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:20:03 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:20:03 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:20:04 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:20:05 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:20:05 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:20:05 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:20:05 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:20:05 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:20:06 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:12 [main] INFO  utils.Log - Clicked on REST Assuredlink
+2025-10-06 11:20:13 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:13 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:13 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:13 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:13 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:13 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:20:13 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:20:13 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:20:15 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:20:15 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:20:15 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:20:15 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:20:15 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:20:15 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:20:17 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:23 [main] INFO  utils.Log - Clicked on Gitlink
+2025-10-06 11:20:24 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:24 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:24 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:24 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:24 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:24 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:20:24 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:20:24 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:20:25 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:20:26 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:20:26 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:20:26 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:20:26 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:20:26 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:20:28 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:33 [main] INFO  utils.Log - Clicked on Cypresslink
+2025-10-06 11:20:35 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:35 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:35 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:35 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:35 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:35 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:20:35 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:20:35 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:20:36 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:20:36 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:20:36 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:20:36 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:20:36 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:20:36 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:20:38 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:44 [main] INFO  utils.Log - Clicked on TestNGlink
+2025-10-06 11:20:45 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:45 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:45 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:45 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:45 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:45 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-06 11:20:45 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 11:20:45 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 11:20:46 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 11:20:47 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 11:20:47 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 11:20:47 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-06 11:20:47 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-06 11:20:47 [main] INFO  utils.Log - ===============================================================
+2025-10-06 11:20:48 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-06 11:20:54 [main] INFO  utils.Log - Clicked on Jenkinslink
+2025-10-06 11:20:55 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-06 11:20:55 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 11:20:55 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-06 11:20:55 [main] INFO  utils.Log - =============================================================
+2025-10-06 11:20:55 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 11:20:55 [main] INFO  utils.Log - Browser teardown completed.

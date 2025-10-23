@@ -1,0 +1,16 @@
+2025-10-08 11:46:28 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-08 11:46:28 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-08 11:46:40 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-08 11:46:41 [main] INFO  utils.Log - Browser setup completed.
+2025-10-08 11:46:41 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-08 11:46:41 [main] INFO  utils.Log - Scenario: Verify the website logo functionality
+2025-10-08 11:46:41 [main] INFO  utils.Log - Tags: @UI, @smoke1
+2025-10-08 11:46:41 [main] INFO  utils.Log - ===============================================================
+2025-10-08 11:46:43 [main] INFO  utils.Log - Clicked on menu item: Interview Questions
+2025-10-08 11:46:44 [main] INFO  utils.Log - Clicked on the site logo.
+2025-10-08 11:46:44 [main] INFO  utils.Log - Scenario passed: Verify the website logo functionality
+2025-10-08 11:46:44 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-08 11:46:44 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-08 11:46:44 [main] INFO  utils.Log - =============================================================
+2025-10-08 11:46:44 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-08 11:46:44 [main] INFO  utils.Log - Browser teardown completed.

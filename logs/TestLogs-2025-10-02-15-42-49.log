@@ -1,0 +1,200 @@
+2025-10-02 15:42:49 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:42:49 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:42:51 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:42:54 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:42:54 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:42:54 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:42:54 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:42:54 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:42:54 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:42:56 [main] INFO  utils.Log - Clicked on Seleniumlink
+2025-10-02 15:42:56 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:42:56 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:42:56 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:42:56 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:42:56 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:42:57 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:42:57 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:42:57 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:42:57 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:42:58 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:42:59 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:42:59 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:42:59 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:42:59 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:42:59 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:42:59 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:01 [main] INFO  utils.Log - Clicked on Javalink
+2025-10-02 15:43:01 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:01 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:43:01 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:43:01 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:43:01 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:43:01 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:01 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:01 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:01 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:02 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:03 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:03 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:03 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:03 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:03 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:03 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:05 [main] INFO  utils.Log - Clicked on SQLlink
+2025-10-02 15:43:05 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:05 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:43:05 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:43:05 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:43:05 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:43:05 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:05 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:05 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:05 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:07 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:07 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:08 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:08 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:08 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:08 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:08 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:10 [main] INFO  utils.Log - Clicked on Cucumberlink
+2025-10-02 15:43:10 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:10 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:43:10 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:43:10 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:43:10 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:43:10 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:10 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:10 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:10 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:11 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:12 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:12 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:12 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:12 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:12 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:12 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:15 [main] INFO  utils.Log - Clicked on REST Assuredlink
+2025-10-02 15:43:15 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:15 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:43:15 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:43:15 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:43:15 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:43:15 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:15 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:15 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:15 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:16 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:17 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:17 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:17 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:17 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:17 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:17 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:19 [main] INFO  utils.Log - Clicked on Gitlink
+2025-10-02 15:43:19 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:19 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-02 15:43:19 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-02 15:43:19 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-02 15:43:19 [main] INFO  utils.Log - =============================================================
+2025-10-02 15:43:19 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:19 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:19 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:19 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:20 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:21 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:21 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:21 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:21 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:21 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:21 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-02 15:43:23 [main] INFO  utils.Log - Clicked on Cypresslink
+2025-10-02 15:43:23 [main] ERROR utils.Log - Scenario failed: Validate each section title after clicking sidebar links
+2025-10-02 15:43:23 [main] ERROR utils.Log - Failed to capture Base64 screenshot.
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.214)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.0.1', java.version: '11.0.23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5951a920dd4232fc7100f4b50104129b, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.214, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: /var/folders/q8/8nb85nm55zv...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62978}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62978/devtoo..., se:cdpVersion: 140.0.7339.214, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5951a920dd4232fc7100f4b50104129b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[?:?]
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:618) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622) ~[selenium-remote-driver-4.27.0.jar:?]
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:334) ~[selenium-remote-driver-4.27.0.jar:?]
+	at utils.ScreenshotUtils.takeScreenshotAsBase64(ScreenshotUtils.java:58) ~[classes/:?]
+	at hooks.Hooks.afterScenario(Hooks.java:40) ~[classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66) ~[cucumber-java-7.20.1.jar:7.20.1]
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24) ~[cucumber-java-7.20.1.jar:7.20.1]
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47) ~[cucumber-java-7.20.1.jar:7.20.1]
+	at io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64) ~[cucumber-java-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:47) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:81) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:53) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:90) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:136) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:136) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89) ~[cucumber-junit-7.20.1.jar:7.20.1]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runFeatures$6(CucumberExecutionContext.java:147) ~[cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.execute(CucumberExecutionContext.java:162) [cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.core.runtime.CucumberExecutionContext.runFeatures(CucumberExecutionContext.java:145) [cucumber-core-7.20.1.jar:7.20.1]
+	at io.cucumber.junit.Cucumber$StartAndFinishTestRun.evaluate(Cucumber.java:229) [cucumber-junit-7.20.1.jar:7.20.1]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) [junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) [junit-4.13.2.jar:4.13.2]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.13.2.jar:4.13.2]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) [junit-rt.jar:?]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) [idea_rt.jar:?]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231) [junit-rt.jar:?]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) [junit-rt.jar:?]
+2025-10-02 15:43:23 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-02 15:43:23 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-02 15:43:23 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-02 15:43:23 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-02 15:43:24 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-02 15:43:25 [main] INFO  utils.Log - Browser setup completed.
+2025-10-02 15:43:25 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-02 15:43:25 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-02 15:43:25 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-02 15:43:25 [main] INFO  utils.Log - ===============================================================
+2025-10-02 15:43:25 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.

@@ -1,0 +1,18 @@
+2025-10-06 13:06:07 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-06 13:06:07 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-06 13:06:09 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-06 13:06:09 [main] INFO  utils.Log - Browser setup completed.
+2025-10-06 13:06:09 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-06 13:06:09 [main] INFO  utils.Log - Scenario: Verify login with multiple credentials
+2025-10-06 13:06:09 [main] INFO  utils.Log - Tags: @UI, @TestLogin
+2025-10-06 13:06:09 [main] INFO  utils.Log - ===============================================================
+2025-10-06 13:06:11 [main] INFO  utils.Log - Verified that the Login link is visible and clicked.
+2025-10-06 13:06:12 [main] INFO  utils.Log - Entered username and password credentials
+2025-10-06 13:06:12 [main] INFO  utils.Log - Verified that the Login button is visible and clicked.
+2025-10-06 13:06:13 [main] ERROR utils.Log - Scenario failed: Verify login with multiple credentials
+2025-10-06 13:06:13 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-06 13:06:13 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-06 13:06:13 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-06 13:06:13 [main] INFO  utils.Log - =============================================================
+2025-10-06 13:06:13 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-06 13:06:14 [main] INFO  utils.Log - Browser teardown completed.

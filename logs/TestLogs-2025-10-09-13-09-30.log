@@ -1,0 +1,26 @@
+2025-10-09 13:09:30 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-09 13:09:30 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-09 13:09:33 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-09 13:09:37 [main] INFO  utils.Log - Browser setup completed.
+2025-10-09 13:09:37 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-09 13:09:37 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-09 13:09:37 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-09 13:09:37 [main] INFO  utils.Log - ===============================================================
+2025-10-09 13:09:39 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-09 13:09:44 [main] INFO  utils.Log - Clicked on Seleniumlink
+2025-10-09 13:09:45 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-09 13:09:45 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-09 13:09:45 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-09 13:09:45 [main] INFO  utils.Log - =============================================================
+2025-10-09 13:09:45 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-09 13:09:45 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-09 13:09:45 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-09 13:09:45 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-09 13:09:46 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-09 13:09:48 [main] INFO  utils.Log - Browser setup completed.
+2025-10-09 13:09:48 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-09 13:09:48 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-09 13:09:48 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-09 13:09:48 [main] INFO  utils.Log - ===============================================================
+2025-10-09 13:09:49 [main] INFO  utils.Log - Verified that the My Notes Tab is visible.
+2025-10-09 13:09:53 [main] INFO  utils.Log - Clicked on Javalink

@@ -1,0 +1,55 @@
+2025-10-08 14:06:16 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-08 14:06:16 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-08 14:06:18 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-08 14:06:23 [main] INFO  utils.Log - Browser setup completed.
+2025-10-08 14:06:23 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-08 14:06:23 [main] INFO  utils.Log - Scenario: Verify HomePage URL and Title
+2025-10-08 14:06:23 [main] INFO  utils.Log - Tags: @UI, @Regression, @smoke
+2025-10-08 14:06:23 [main] INFO  utils.Log - ===============================================================
+2025-10-08 14:06:23 [main] INFO  utils.Log - Verifying the page title.
+2025-10-08 14:06:23 [main] INFO  utils.Log - Expected Title (normalized): Home - My Digital Notebook
+2025-10-08 14:06:23 [main] INFO  utils.Log - Actual Title (normalized): Home - My Digital Notebook
+2025-10-08 14:06:23 [main] INFO  utils.Log - Page title verified successfully: Home - My Digital Notebook
+2025-10-08 14:06:23 [main] INFO  utils.Log - HomePage Title Verification Completed
+2025-10-08 14:06:23 [main] INFO  utils.Log - Screenshot saved at the designated directory
+2025-10-08 14:06:23 [main] INFO  utils.Log - Verifying the page URL.
+2025-10-08 14:06:23 [main] INFO  utils.Log - Expected URL (normalized): https://seleniums.com/
+2025-10-08 14:06:23 [main] INFO  utils.Log - Actual URL (normalized): https://www.seleniums.com/
+2025-10-08 14:06:23 [main] ERROR utils.Log - The page URL is incorrect!
+2025-10-08 14:06:23 [main] ERROR utils.Log - Scenario failed: Verify HomePage URL and Title
+2025-10-08 14:06:23 [main] INFO  utils.Log - Screenshot captured as Base64.
+2025-10-08 14:06:23 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-08 14:06:23 [main] INFO  utils.Log - Scenario Status: FAILED
+2025-10-08 14:06:23 [main] INFO  utils.Log - =============================================================
+2025-10-08 14:06:24 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-08 14:06:24 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-08 14:06:24 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-08 14:06:24 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-08 14:06:25 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-08 14:06:26 [main] INFO  utils.Log - Browser setup completed.
+2025-10-08 14:06:26 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-08 14:06:26 [main] INFO  utils.Log - Scenario: Verify user is able to enter search terms and able to see valid search results
+2025-10-08 14:06:26 [main] INFO  utils.Log - Tags: @UI, @smoke, @SearchFunc
+2025-10-08 14:06:26 [main] INFO  utils.Log - ===============================================================
+2025-10-08 14:06:26 [main] INFO  utils.Log - Sent search term into the search box.
+2025-10-08 14:06:28 [main] INFO  utils.Log - Scenario passed: Verify user is able to enter search terms and able to see valid search results
+2025-10-08 14:06:28 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-08 14:06:28 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-08 14:06:28 [main] INFO  utils.Log - =============================================================
+2025-10-08 14:06:28 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-08 14:06:28 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-08 14:06:28 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-08 14:06:28 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-08 14:06:29 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-08 14:06:30 [main] INFO  utils.Log - Browser setup completed.
+2025-10-08 14:06:30 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-08 14:06:30 [main] INFO  utils.Log - Scenario: Verify user is able to enter search terms and able to see valid search results
+2025-10-08 14:06:30 [main] INFO  utils.Log - Tags: @UI, @smoke, @SearchFunc
+2025-10-08 14:06:30 [main] INFO  utils.Log - ===============================================================
+2025-10-08 14:06:30 [main] INFO  utils.Log - Sent search term into the search box.
+2025-10-08 14:06:31 [main] INFO  utils.Log - Scenario passed: Verify user is able to enter search terms and able to see valid search results
+2025-10-08 14:06:31 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-08 14:06:31 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-08 14:06:31 [main] INFO  utils.Log - =============================================================
+2025-10-08 14:06:31 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-08 14:06:31 [main] INFO  utils.Log - Browser teardown completed.
