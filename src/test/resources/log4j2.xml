@@ -2,16 +2,19 @@
     <Appenders>
         <!-- Console Appender with Color Highlighting -->
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %highlight{%-5level}{FATAL=red, ERROR=red, WARN=yellow, INFO=green} %-5level %logger{36} - %msg%n"/>
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %highlight{%-5level}{FATAL=red, ERROR=red, WARN=yellow, INFO=green} %-5level %logger{36} - %msg%n"/>
         </Console>
 
         <!-- File Appender for General Test Logs -->
-        <File name="FileAppender" fileName="logs/TestLogs-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true" append="true">
+        <File name="FileAppender" fileName="logs/TestLogs-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true"
+              append="true">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
 
         <!-- File Appender for Failed Tests Logs -->
-        <File name="FailedFileAppender" fileName="logs/FailedTests-${date:yyyy-MM-dd-HH-mm-ss}.log" immediateFlush="true" append="true">
+        <File name="FailedFileAppender" fileName="logs/FailedTests-${date:yyyy-MM-dd-HH-mm-ss}.log"
+              immediateFlush="true" append="true">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
         </File>
 
@@ -39,8 +42,8 @@
         </Logger>
 
         <!-- Logger for ERROR level logs to trigger email notifications -->
-<!--        <Logger name="errorLogger" level="ERROR" additivity="false">-->
-<!--            <AppenderRef ref="EmailAppender"/>-->
-<!--        </Logger>-->
+        <!--        <Logger name="errorLogger" level="ERROR" additivity="false">-->
+        <!--            <AppenderRef ref="EmailAppender"/>-->
+        <!--        </Logger>-->
     </Loggers>
 </Configuration>

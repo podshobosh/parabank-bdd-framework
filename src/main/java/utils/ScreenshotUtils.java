@@ -13,6 +13,11 @@ public class ScreenshotUtils {
 
     private static final String SCREENSHOT_DIR = ConfigReader.getProperty("screenshot.dir");
 
+
+    public static String sanitize(String name){
+        return name.replaceAll("[^a-zA-Z0-9._-]", "_");
+    }
+
     /**
      * Captures a screenshot of the current browser state and saves it with a timestamped filename.
      *
@@ -21,25 +26,35 @@ public class ScreenshotUtils {
      * @return The absolute path of the saved screenshot file.
      */
     public static String takeScreenshot(WebDriver driver, String testName) {
+        if (driver ==null){
+            Log.error("Driver is null; cannot take screenshot");
+            throw new IllegalStateException("WebDriver is null");
+        }
+        if (!(driver instanceof TakesScreenshot)){
+            Log.error("Driver does not support TakeScreenShot");
+            throw new IllegalStateException("Driver does not support TakeScreenShot");
+        }
         try {
+            // sanitize the filename and optionally allow absolute dir
+            String safeName = sanitize(testName);
             // Generate timestamp and file name
             String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            String screenshotPath = SCREENSHOT_DIR + File.separator + testName + "_" + timestamp + ".png";
-
-            // Take screenshot as a file
-            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            File destFile = new File(screenshotPath);
+            File baseDir = new File(SCREENSHOT_DIR);
+            File destFile = new File(baseDir, safeName + "_" + timestamp + ".png");
 
             // Ensure the directory exists
-            if (!destFile.getParentFile().exists()) {
+            if (!destFile.getParentFile().exists()){
                 destFile.getParentFile().mkdirs();
             }
 
+            // Take the screenshot as a file
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             // Copy the screenshot to the destination
             FileUtils.copyFile(srcFile, destFile);
 
             Log.info("Screenshot saved at the designated directory");
             return destFile.getAbsolutePath();
+
         } catch (Exception e) {
             Log.error("Failed to capture screenshot for test: " + testName, e);
             throw new RuntimeException(e);
@@ -53,8 +68,17 @@ public class ScreenshotUtils {
      * @return Base64 encoded screenshot.
      */
     public static String takeScreenshotAsBase64(WebDriver driver) {
+
+        if (driver == null ){
+            Log.error("WebDriver is null");
+            throw new IllegalStateException("WebDriver is null");
+        }
+        if (!(driver instanceof TakesScreenshot)){
+            Log.error("Driver does not support TakeScreenShot");
+            throw new IllegalStateException("Driver does not support TakeScreenShot");
+        }
         try {
-            // Take screenshot as Base64
+            // Take a screenshot as Base64
             String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
             Log.info("Screenshot captured as Base64.");
             return base64Screenshot;

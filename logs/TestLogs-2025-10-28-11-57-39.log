@@ -1,0 +1,20 @@
+2025-10-28 11:57:39 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-28 11:57:39 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-28 11:57:40 [main] INFO  utils.Log - Navigating to: https://parabank.parasoft.com/parabank/index.htm
+2025-10-28 11:57:41 [main] INFO  utils.Log - Browser setup completed.
+2025-10-28 11:57:41 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-28 11:57:41 [main] INFO  utils.Log - Scenario: Register a new user
+2025-10-28 11:57:41 [main] INFO  utils.Log - Tags: @UI, @RegisterLoginFlow
+2025-10-28 11:57:41 [main] INFO  utils.Log - ===============================================================
+2025-10-28 11:57:41 [main] INFO  utils.Log - Verifying the page URL.
+2025-10-28 11:57:41 [main] INFO  utils.Log - Expected URL (normalized): https://parabank.parasoft.com/parabank/index.htm
+2025-10-28 11:57:41 [main] INFO  utils.Log - Actual URL (normalized): https://parabank.parasoft.com/parabank/index.htm
+2025-10-28 11:57:41 [main] INFO  utils.Log - Page URL verified successfully: https://parabank.parasoft.com/parabank/index.htm
+2025-10-28 11:57:42 [main] INFO  utils.Log - Filled out all the required fields.
+2025-10-28 11:57:42 [main] INFO  utils.Log - Clicked Register button.
+2025-10-28 11:57:43 [main] INFO  utils.Log - Scenario passed: Register a new user
+2025-10-28 11:57:43 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-28 11:57:43 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-28 11:57:43 [main] INFO  utils.Log - =============================================================
+2025-10-28 11:57:43 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-28 11:57:43 [main] INFO  utils.Log - Browser teardown completed.

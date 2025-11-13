@@ -15,18 +15,19 @@ public class CommonUtils {
     public static void verifyUrl(WebDriver driver, String expectedUrl) {
         // Get the current URL from the browser
         String actualUrl = driver.getCurrentUrl();
-        // Normalize the expected URL: trim spaces and convert to lowercase
+        // Normalize both URLs: trim spaces and convert to lowercase for a tolerant comparison
         String normalizedExpectedUrl = expectedUrl.trim().toLowerCase();
+        String normalizedActualUrl = actualUrl.trim().toLowerCase();
 
         // Log the action and the URLs
         Log.info("Verifying the page URL.");
         Log.info("Expected URL (normalized): " + normalizedExpectedUrl);
-        Log.info("Actual URL (normalized): " + actualUrl);
+        Log.info("Actual URL (normalized): " + normalizedActualUrl);
 
-        // Validate the URL
-        if (!actualUrl.equals(normalizedExpectedUrl)) {
+        // Validate the URL (case-insensitive and trimmed)
+        if (!normalizedActualUrl.equals(normalizedExpectedUrl)) {
             Log.error("The page URL is incorrect!");
-            throw new RuntimeException("Expected URL: " + normalizedExpectedUrl + ", but got: " + actualUrl);
+            throw new RuntimeException("Expected URL: " + normalizedExpectedUrl + ", but got: " + normalizedActualUrl);
         }
 
         // Log success if URLs match

@@ -1,0 +1,16 @@
+2025-10-27 12:18:46 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:46 [main] INFO  utils.Log - Scenario: Insert a customer and verify via JDBC only
+2025-10-27 12:18:46 [main] INFO  utils.Log - Tags: @Testcase002, @db, @jdbc
+2025-10-27 12:18:46 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:46 [main] INFO  utils.Log - Initializing database...
+2025-10-27 12:18:46 [main] INFO  utils.Log - Database initialized successfully
+2025-10-27 12:18:46 [main] INFO  utils.Log - Database cleaned
+2025-10-27 12:18:46 [main] INFO  utils.Log - Customer inserted with ID: 1
+2025-10-27 12:18:46 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:18:46 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:18:46 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:18:46 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:47 [main] INFO  utils.Log - Scenario passed: Insert a customer and verify via JDBC only
+2025-10-27 12:18:47 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:47 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-27 12:18:47 [main] INFO  utils.Log - =============================================================

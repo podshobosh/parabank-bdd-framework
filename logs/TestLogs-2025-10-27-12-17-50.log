@@ -1,0 +1,141 @@
+2025-10-27 12:17:50 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:17:50 [main] INFO  utils.Log - Scenario: Insert a customer and verify via JDBC only
+2025-10-27 12:17:50 [main] INFO  utils.Log - Tags: @Testcase002, @db, @jdbc
+2025-10-27 12:17:50 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:17:50 [main] INFO  utils.Log - Initializing database...
+2025-10-27 12:17:50 [main] INFO  utils.Log - Database initialized successfully
+2025-10-27 12:17:50 [main] INFO  utils.Log - Database cleaned
+2025-10-27 12:17:50 [main] INFO  utils.Log - Customer inserted with ID: 1
+2025-10-27 12:17:50 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:17:50 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:17:50 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 12:17:50 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:17:55 [main] INFO  utils.Log - Scenario passed: Insert a customer and verify via JDBC only
+2025-10-27 12:17:55 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:17:55 [main] INFO  utils.Log - Scenario Status: PASSED
+2025-10-27 12:17:55 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:17:55 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:17:55 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:00 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:00 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:00 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:00 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:00 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:00 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:00 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:00 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:00 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:00 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:00 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:00 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:00 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:02 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:03 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:03 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:03 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:03 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:03 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:03 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:03 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:03 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:03 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:03 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:03 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:03 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:03 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:04 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:05 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:05 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:05 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:05 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:05 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:05 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:05 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:05 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:05 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:05 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:05 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:05 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:05 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:06 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:07 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:07 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:07 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:07 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:07 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:07 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:07 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:07 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:07 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:07 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:07 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:07 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:07 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:08 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:09 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:09 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:09 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:09 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:09 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:09 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:09 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:09 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:09 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:09 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:09 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:09 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:09 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:10 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:11 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:11 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:11 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:11 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:11 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:11 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:11 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:11 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:11 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:11 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:11 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:11 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:11 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:12 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:13 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:13 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:13 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:13 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:13 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:13 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:13 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:13 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:13 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:13 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:13 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:13 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:13 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:14 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:15 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:15 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:15 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:15 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:15 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:15 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:15 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:15 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:15 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:15 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:15 [main] INFO  utils.Log - Browser teardown completed.
+2025-10-27 12:18:15 [main] INFO  utils.Log - Initializing browser setup...
+2025-10-27 12:18:15 [main] INFO  utils.Log - Launching Chrome browser...
+2025-10-27 12:18:16 [main] INFO  utils.Log - Navigating to: https://seleniums.com/
+2025-10-27 12:18:17 [main] INFO  utils.Log - Browser setup completed.
+2025-10-27 12:18:17 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2025-10-27 12:18:17 [main] INFO  utils.Log - Scenario: Validate each section title after clicking sidebar links
+2025-10-27 12:18:17 [main] INFO  utils.Log - Tags: @UI, @Testcase002
+2025-10-27 12:18:17 [main] INFO  utils.Log - ===============================================================
+2025-10-27 12:18:17 [main] INFO  utils.Log - Scenario passed: Validate each section title after clicking sidebar links
+2025-10-27 12:18:17 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2025-10-27 12:18:17 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2025-10-27 12:18:17 [main] INFO  utils.Log - =============================================================
+2025-10-27 12:18:17 [main] INFO  utils.Log - Tearing down the browser...
+2025-10-27 12:18:17 [main] INFO  utils.Log - Browser teardown completed.

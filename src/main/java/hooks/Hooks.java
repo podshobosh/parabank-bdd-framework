@@ -33,25 +33,33 @@ public class Hooks {
     public void afterScenario(Scenario scenario) {
         driver = DriverFactory.getDriver();
 
-        if (scenario.isFailed()) {
-            Log.error("Scenario failed: " + scenario.getName());
+        try {
+            if (scenario.isFailed()) {
+                Log.error("Scenario failed: " + scenario.getName());
+                try {
+                    String base64Screenshot = ScreenshotUtils.takeScreenshotAsBase64(driver);
+                    ExtentReportManager.getTest()
+                            .fail("Scenario failed: " + scenario.getName(),
+                                    com.aventstack.extentreports.MediaEntityBuilder
+                                            .createScreenCaptureFromBase64String(base64Screenshot)
+                                            .build());
+                    failedLogger.error("Screenshot captured for failed scenario: " + scenario.getName());
+                } catch (Exception ex) {
+                    // Don’t allow screenshot failures to break reporting
+                    Log.error("Could not capture failure screenshot: " + ex.getMessage(), ex);
+                    ExtentReportManager.getTest().fail("Scenario failed (screenshot unavailable): " + scenario.getName());
+                }
+            } else {
+                Log.info("Scenario passed: " + scenario.getName());
+                ExtentReportManager.getTest().pass("Scenario passed: " + scenario.getName());
+            }
 
-            // Capture Base64 screenshot and attach to Extent Report
-            String base64Screenshot = ScreenshotUtils.takeScreenshotAsBase64(driver);
-            ExtentReportManager.getTest()
-                    .fail("Scenario failed: " + scenario.getName(),
-                            com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-
-            failedLogger.error("Screenshot captured for failed scenario: " + scenario.getName());
-        } else {
-            Log.info("Scenario passed: " + scenario.getName());
-            ExtentReportManager.getTest().pass("Scenario passed: " + scenario.getName());
+        } finally {
+            Log.info("====================== ENDING SCENARIO ======================");
+            Log.info("Scenario Status: " + scenario.getStatus());
+            Log.info("=============================================================");
+            ExtentReportManager.flush();
         }
 
-        Log.info("====================== ENDING SCENARIO ======================");
-        Log.info("Scenario Status: " + scenario.getStatus());
-        Log.info("=============================================================");
-
-        ExtentReportManager.flush();
     }
 }

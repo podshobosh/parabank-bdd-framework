@@ -1,0 +1,8 @@
+2025-10-27 11:50:29 [main] INFO  utils.Log - Initializing database...
+2025-10-27 11:50:29 [main] INFO  utils.Log - Database initialized successfully
+2025-10-27 11:50:29 [main] INFO  utils.Log - Database cleaned
+2025-10-27 11:50:29 [main] INFO  utils.Log - Customer inserted with ID: 1
+2025-10-27 11:50:29 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 11:50:29 [main] INFO  utils.Log - Query executed: 1 rows returned
+2025-10-27 11:50:29 [main] INFO  utils.Log - Database cleaned
+2025-10-27 11:50:29 [main] INFO  utils.Log - Connection management handled by try-with-resources
