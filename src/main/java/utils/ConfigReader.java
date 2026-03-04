@@ -22,8 +22,23 @@ public class ConfigReader {
         return properties.getProperty(key);
     }
 
+    //Overloaded with default value
+    public static String getProperty(String key, String defValue){
+        String value = properties.getProperty(key);
+        return  (value == null || value.trim().isEmpty()) ? defValue : value;
+    }
+
+
     public static int getIntProperty(String key) {
         String value = properties.getProperty(key);
-        return Integer.parseInt(value);
+
+        if (value == null){
+            throw new RuntimeException("Missing integer property: " + key);
+        }
+        try{
+            return Integer.parseInt(value.trim());
+        }catch (NumberFormatException e){
+            throw new RuntimeException("Invalid integer value for property: " + key + " = " + value, e);
+        }
     }
 }

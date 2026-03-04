@@ -1,0 +1,27 @@
+2026-03-03 10:47:04 [main] INFO  utils.Log - Loaded JDBC driver: org.h2.Driver
+2026-03-03 10:47:04 [main] INFO  utils.Log - Initializing database...
+2026-03-03 10:47:04 [main] INFO  utils.Log - Database initialized successfully
+2026-03-03 10:47:04 [main] INFO  utils.Log - Initializing browser setup...
+2026-03-03 10:47:04 [main] INFO  utils.Log - Launching Chrome browser...
+2026-03-03 10:47:07 [main] INFO  utils.Log - Navigating to: https://parabank.parasoft.com/parabank/index.htm
+2026-03-03 10:47:08 [main] INFO  utils.Log - Browser setup completed.
+2026-03-03 10:47:08 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2026-03-03 10:47:08 [main] INFO  utils.Log - Scenario: Register via UI, mirror to H2, and assert DB record exists
+2026-03-03 10:47:08 [main] INFO  utils.Log - Tags: @UI, @DB, @ui, @shadow-db
+2026-03-03 10:47:08 [main] INFO  utils.Log - ===============================================================
+2026-03-03 10:47:08 [main] INFO  utils.Log - Verifying the page URL.
+2026-03-03 10:47:08 [main] INFO  utils.Log - Expected URL (normalized): https://parabank.parasoft.com/parabank/index.htm
+2026-03-03 10:47:08 [main] INFO  utils.Log - Actual URL (normalized): https://parabank.parasoft.com/parabank/index.htm
+2026-03-03 10:47:08 [main] INFO  utils.Log - Page URL verified successfully: https://parabank.parasoft.com/parabank/index.htm
+2026-03-03 10:47:09 [main] INFO  utils.Log - Generated random username: user1772552829858240
+2026-03-03 10:47:10 [main] INFO  utils.Log - Filled out all the required fields.
+2026-03-03 10:47:10 [main] INFO  utils.Log - Clicked Register button.
+2026-03-03 10:47:10 [main] INFO  utils.Log - Welcome {username} header is visible
+2026-03-03 10:47:10 [main] INFO  utils.Log - 'User created successfully' message is visible
+2026-03-03 10:47:10 [main] INFO  utils.Log - Scenario passed: Register via UI, mirror to H2, and assert DB record exists
+2026-03-03 10:47:10 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2026-03-03 10:47:10 [main] INFO  utils.Log - Scenario Status: PASSED
+2026-03-03 10:47:10 [main] INFO  utils.Log - =============================================================
+2026-03-03 10:47:11 [main] INFO  utils.Log - Tearing down the browser...
+2026-03-03 10:47:11 [main] INFO  utils.Log - Browser teardown completed.
+2026-03-03 10:47:11 [main] INFO  utils.Log - Database cleaned

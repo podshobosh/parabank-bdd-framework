@@ -17,8 +17,12 @@ public class DriverFactory {
 
     // Method to initialize the WebDriver
     public static WebDriver initializeDriver() {
-        String browser = ConfigReader.getProperty("browser");
-        String headless = ConfigReader.getProperty("headless");
+
+        // Defensive config handling
+        String browser = ConfigReader.getProperty("browser","chrome" ).trim().toLowerCase();
+        String headless = ConfigReader.getProperty("headless", "false").trim().toLowerCase();
+
+
 
         try {
             switch (browser) {
@@ -69,6 +73,11 @@ public class DriverFactory {
         }
         return driver;
     }
+
+    public static WebDriver peekDriver() {
+        return driver;
+    }
+
 
     // Method to quit the driver
     public static void quitDriver() {

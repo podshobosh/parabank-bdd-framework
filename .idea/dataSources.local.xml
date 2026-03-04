@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-253.31033.145">
+    <data-source name="HSQLDB (Local)" uuid="7737b21c-e43b-45e0-80df-2758c8ef7a07">
+      <database-info product="HSQL Database Engine" version="2.7.4" jdbc-version="4.2" driver-name="HSQL Database Engine Driver" driver-version="2.7.0" dbms="HSQLDB" exact-version="2.7.4" exact-driver-version="2.7">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>

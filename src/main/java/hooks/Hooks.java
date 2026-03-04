@@ -1,5 +1,7 @@
 package hooks;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
@@ -31,35 +33,39 @@ public class Hooks {
 
     @After
     public void afterScenario(Scenario scenario) {
-        driver = DriverFactory.getDriver();
+        driver = DriverFactory.peekDriver();
 
-        try {
-            if (scenario.isFailed()) {
-                Log.error("Scenario failed: " + scenario.getName());
+        if (scenario.isFailed()) {
+            Log.error("Scenario failed: " + scenario.getName());
+
+            if (driver != null) {
                 try {
                     String base64Screenshot = ScreenshotUtils.takeScreenshotAsBase64(driver);
                     ExtentReportManager.getTest()
                             .fail("Scenario failed: " + scenario.getName(),
-                                    com.aventstack.extentreports.MediaEntityBuilder
-                                            .createScreenCaptureFromBase64String(base64Screenshot)
-                                            .build());
-                    failedLogger.error("Screenshot captured for failed scenario: " + scenario.getName());
-                } catch (Exception ex) {
-                    // Don’t allow screenshot failures to break reporting
-                    Log.error("Could not capture failure screenshot: " + ex.getMessage(), ex);
-                    ExtentReportManager.getTest().fail("Scenario failed (screenshot unavailable): " + scenario.getName());
+                                    MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+                } catch (Exception e) {
+                    Log.error("Failed to capture screenshot", e);
+                    ExtentReportManager.getTest().fail("Scenario failed, (screenshot capture failed)");
                 }
-            } else {
-                Log.info("Scenario passed: " + scenario.getName());
-                ExtentReportManager.getTest().pass("Scenario passed: " + scenario.getName());
+            }else{
+                Log.warn("Driver was null. Screenshot was not taken");
+                ExtentReportManager.getTest().fail("Scenario failed. (no Driver available)");
             }
-
-        } finally {
-            Log.info("====================== ENDING SCENARIO ======================");
-            Log.info("Scenario Status: " + scenario.getStatus());
-            Log.info("=============================================================");
-            ExtentReportManager.flush();
+        }else {
+            ExtentReportManager.getTest()
+                    .pass("Scenario passed: " + scenario.getName());
         }
 
+        Log.info("====================== ENDING SCENARIO ======================");
+        Log.info("Scenario Status: " + scenario.getStatus());
+        Log.info("=============================================================");
+
     }
+
+    @AfterAll
+    public static void afterAll(){ // static hooks
+        ExtentReportManager.flush();
+    }
+
 }

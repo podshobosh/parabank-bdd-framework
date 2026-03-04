@@ -13,7 +13,12 @@ public class HoldOn {
     private static int pageLoadTimeout = ConfigReader.getIntProperty("page.load.timeout");
     private static int elementVisibilityTimeout = ConfigReader.getIntProperty("element.visibility.timeout");
 
-
+    /**
+     * @deprecated Avoid using Thread.sleep().
+     * Use explicit waits instead.
+     * This method exists ONLY for debugging and should not be used in framework logic.
+     */
+    @Deprecated
     public static void sleep(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
@@ -49,19 +54,22 @@ public class HoldOn {
 
     public static void waitForElementsToBeVisible(WebDriver driver, List<WebElement> elements) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(elementVisibilityTimeout));
-        for (WebElement e : elements){
+        for (WebElement e : elements) {
             wait.until(ExpectedConditions.visibilityOf(e));// Wait until the element is visible
         }
 
     }
-    /** Safely clicks a single element: waits clickable, then normal click, JS fallback if intercepted. */
-    public static void safeClick(WebDriver driver, WebElement element){
+
+    /**
+     * Safely clicks a single element: waits clickable, then normal click, JS fallback if intercepted.
+     */
+    public static void safeClick(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.ignoring(StaleElementReferenceException.class)
                 .until(ExpectedConditions.elementToBeClickable(element));
-        try{
+        try {
             element.click();
-        }catch (Exception e){
+        } catch (Exception e) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
         }
 
@@ -74,57 +82,21 @@ public class HoldOn {
      * - Retries automatically until the element is found and clicked, or timeout is reached.
      */
     public static void clickOnElementInList(WebDriver driver, By locator, String target) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.ignoring(StaleElementReferenceException.class)
-                .until(driver1 -> {
-                    List<WebElement> elements = driver.findElements(locator);
-                    for (WebElement el : elements) {
-                        if (target.equalsIgnoreCase(el.getText().trim())){
-                            el.click();
-                            return true; //success
-                        }
-                    }
-                    return false; // not found yet -> retry until found
-                });
-
-
-    }
-
-    /**
-     * Enhanced clickOnElementInList using List<WebElement> with preloader handling
-     * This method re-finds elements to avoid stale references
-     */
-    public static void clickOnElementInList(WebDriver driver, List<WebElement> elements, String target) {
-        // Wait for preloader to disappear first
-        waitForPreloaderToDisappear(driver);
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(defaultWaitTime));
         wait.ignoring(StaleElementReferenceException.class)
                 .ignoring(ElementClickInterceptedException.class)
                 .until(driver1 -> {
-                    // Check if preloader is still present
-                    try {
-                        WebElement preloader = driver.findElement(By.id("preloader"));
-                        if (preloader.isDisplayed()) {
-                            return false; // Preloader visible, retry
-                        }
-                    } catch (NoSuchElementException e) {
-                        // Preloader not found, that's good
-                    }
 
-                    // Iterate through the list
+                    List<WebElement> elements = driver1.findElements(locator);
+
                     for (WebElement e : elements) {
                         try {
                             String elementText = e.getText().trim();
+
                             if (elementText.equalsIgnoreCase(target)) {
                                 // Scroll element into view
-                                ((JavascriptExecutor) driver).executeScript(
-                                        "arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", e
-                                );
-
-                                // Small pause after scroll
-                                sleep(3000);
+                                ((JavascriptExecutor) driver1).executeScript(
+                                        "arguments[0].scrollIntoView({block: 'center'});", e);
 
                                 // Try normal click first
                                 try {
@@ -132,7 +104,7 @@ public class HoldOn {
                                     return true; // Success
                                 } catch (ElementClickInterceptedException ex) {
                                     // Fallback to JavaScript click
-                                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", e);
+                                    ((JavascriptExecutor) driver1).executeScript("arguments[0].click();", e);
                                     return true; // Success
                                 }
                             }
@@ -143,33 +115,41 @@ public class HoldOn {
                     }
                     return false; // Element not found, retry
                 });
+
+
     }
 
     /**
-     * Wait for preloader to disappear completely
+     * This method is APP SPECIFIC - will not work as a universal method.
+     * Only works for selenium UI
      */
-    public static void waitForPreloaderToDisappear(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    public static void waitForElementToDisappear(WebDriver driver, By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(defaultWaitTime));
         try {
-            // Wait for preloader to become invisible
+            // Wait for element to become invisible
             wait.until(ExpectedConditions.invisibilityOfElementLocated(
-                    By.id("preloader")
+                    locator
             ));
         } catch (TimeoutException e) {
             // Preloader might not exist on some pages, that's okay
-            System.out.println("Preloader not found or already disappeared");
+            Log.info("Preloader not found or already disappeared");
+
         }
     }
 
+    public static List<WebElement> waitForElementsToBePresent(WebDriver driver, By locator, int timeoutSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
 
-
-
-
-
-
-
-
-
+    public static void waitForTextToBePresent(
+            WebDriver driver,
+            WebElement element,
+            String expectedText
+    ) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(defaultWaitTime));
+        wait.until(ExpectedConditions.textToBePresentInElementValue(element, expectedText));
+    }
 
 
 }

@@ -16,12 +16,15 @@ public class HomePage {
         PageFactory.initElements(this.driver, this);
     }
 
+    @Getter
     @FindBy(name = "username")
     private WebElement usernameInputBox;
 
+    @Getter
     @FindBy(name = "password")
     private WebElement passwordInputBox;
 
+    @Getter
     @FindBy(xpath = "//input[@class='button']")
     private WebElement loginButton;
 
