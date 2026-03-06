@@ -1,0 +1,14 @@
+2026-03-05 11:53:09 [main] INFO  utils.Log - Loaded JDBC driver: org.hsqldb.jdbcDriver
+2026-03-05 11:53:09 [main] INFO  utils.Log - Initializing browser setup...
+2026-03-05 11:53:09 [main] INFO  utils.Log - Launching Chrome browser...
+2026-03-05 11:53:11 [main] INFO  utils.Log - Navigating to: http://localhost:8080/parabank/index.htm
+2026-03-05 11:53:12 [main] INFO  utils.Log - Browser setup completed.
+2026-03-05 11:53:12 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2026-03-05 11:53:12 [main] INFO  utils.Log - Scenario: Registering a new customer persists the customer in the database
+2026-03-05 11:53:12 [main] INFO  utils.Log - Tags: @UI, @DB, @sanity
+2026-03-05 11:53:12 [main] INFO  utils.Log - ===============================================================
+2026-03-05 11:53:12 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2026-03-05 11:53:12 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2026-03-05 11:53:12 [main] INFO  utils.Log - =============================================================
+2026-03-05 11:53:12 [main] INFO  utils.Log - Tearing down the browser...
+2026-03-05 11:53:12 [main] INFO  utils.Log - Browser teardown completed.

@@ -1,0 +1,15 @@
+2026-03-05 12:30:40 [main] INFO  utils.Log - Loaded JDBC driver: org.hsqldb.jdbcDriver
+2026-03-05 12:30:40 [main] INFO  utils.Log - Initializing browser setup...
+2026-03-05 12:30:40 [main] INFO  utils.Log - Launching Chrome browser...
+2026-03-05 12:30:43 [main] INFO  utils.Log - Navigating to: http://localhost:8080/parabank/index.htm
+2026-03-05 12:30:44 [main] INFO  utils.Log - Browser setup completed.
+2026-03-05 12:30:44 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2026-03-05 12:30:44 [main] INFO  utils.Log - Scenario: A registered user can log in successfully
+2026-03-05 12:30:44 [main] INFO  utils.Log - Tags: @UI, @DB, @sanity
+2026-03-05 12:30:44 [main] INFO  utils.Log - ===============================================================
+2026-03-05 12:30:44 [main] INFO  utils.Log - Verified that login panel is visible
+2026-03-05 12:30:44 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2026-03-05 12:30:44 [main] INFO  utils.Log - Scenario Status: UNDEFINED
+2026-03-05 12:30:44 [main] INFO  utils.Log - =============================================================
+2026-03-05 12:30:44 [main] INFO  utils.Log - Tearing down the browser...
+2026-03-05 12:30:44 [main] INFO  utils.Log - Browser teardown completed.

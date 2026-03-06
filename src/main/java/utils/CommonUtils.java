@@ -1,5 +1,7 @@
 package utils;
 
+import factory.DriverFactory;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -77,5 +79,23 @@ public class CommonUtils {
             System.err.println("Failed to get attribute '" + attribute + "' from element: " + e.getMessage());
             return null;
         }
+    }
+
+    public static void type(WebElement element, String value) {
+        highlight(DriverFactory.getDriver(),element );
+        element.clear();
+        element.sendKeys(value);
+    }
+
+    public static void highlight(WebDriver driver, WebElement element){
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            String original = element.getAttribute("style");
+            if (original == null) original = "";
+
+            js.executeScript("arguments[0].setAttribute('style', arguments[1]);",
+                    element, original + "border: 3px solid red !important; background: rgba(255,0,0,0.08) !important;");
+            Thread.sleep(120);
+        }catch (Exception ignored){}
     }
 }

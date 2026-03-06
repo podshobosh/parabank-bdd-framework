@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Log;
 
+import java.util.List;
+
 public class AccountPage extends HomePage {
     private final WebDriver driver;
 
@@ -25,6 +27,15 @@ public class AccountPage extends HomePage {
     @FindBy(xpath = "//p[text()='Your account was created successfully. You are now logged in.']")
     private WebElement successMessage;
 
+    @FindBy(xpath = "//h1[contains(.,'Accounts Overview')]")
+    private WebElement accountOverviewText;
+
+    @FindBy(xpath = "//div[@id='leftPanel']/ul/li")
+    private List<WebElement> accountServicesLinks;
+
+
+
+
     public boolean isWelcomeUserVisible(){
        if (welcomeUserHeader.isDisplayed()){
            Log.info("Welcome {username} header is visible");
@@ -33,6 +44,15 @@ public class AccountPage extends HomePage {
        Log.error("Welcome {username} header is not visible");
         return false;
 
+    }
+
+    public boolean isAccountOverviewTextDisplayed(){
+        if (accountOverviewText.isDisplayed()){
+            Log.info("Account Overview is displayed");
+            return true;
+        }
+        Log.error("Account Overview test is not displayed");
+        return false;
     }
 
     public boolean isWelcomeMessageVisible(){

@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.CommonUtils;
+import utils.Log;
 
 public class HomePage {
 
@@ -34,6 +36,14 @@ public class HomePage {
     @Getter
     @FindBy(xpath = "//a[text()='Register']")
     private WebElement registerLink;
+
+
+    public void login(String username, String password){
+        CommonUtils.type(usernameInputBox, username);
+        CommonUtils.type(passwordInputBox, password);
+        
+        loginButton.click();
+    }
 
 
 }

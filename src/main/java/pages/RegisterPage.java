@@ -1,10 +1,12 @@
 package pages;
 
 import factory.DriverFactory;
+import models.Customer;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.AppUrls;
 import utils.Log;
 
 import java.util.Map;
@@ -50,51 +52,40 @@ public class RegisterPage extends HomePage {
     private WebElement passwordInputBox;
 
     @FindBy(id = "repeatedPassword")
-    private WebElement repeatedPasswordInputBox;
+    private WebElement confirmPassInputBox;
 
     @FindBy(xpath = "//input[@value='Register']")
     private WebElement registerButton;
 
-    
-    public void navigateToRegisterPage(){
-       getRegisterLink().click(); 
+
+    public void navigateToRegisterPage() {
+        getRegisterLink().click();
     }
-        
-    
-    // Fills the registration form using a Map<String, String> coming from a Cucumber DataTable
-    // Expected keys: firstName, lastName, address, city, state, zipCode (or zip), phone, ssn, username, password
-    public void register(Map<String, String> data) {
-        String firstName = data.getOrDefault("firstName", "");
-        String lastName = data.getOrDefault("lastName", "");
-        String address = data.getOrDefault("address", "");
-        String city = data.getOrDefault("city", "");
-        String state = data.getOrDefault("state", "");
-        String zip = data.getOrDefault("zipCode", data.getOrDefault("zip", ""));
-        String phone = data.getOrDefault("phone", "");
-        String ssn = data.getOrDefault("ssn", "");
-        String username = data.getOrDefault("username", "");
-        String password = data.getOrDefault("password", "");
 
-        // Generate random username if contains ${RANDOM}
-        if (username.contains("${RANDOM}")) {
-            username = username.replace("${RANDOM}",
-                    System.currentTimeMillis() + "" + (int)(Math.random() * 1000));
-            Log.info("Generated random username: " + username);
-        }
 
-        firstNameInputBox.sendKeys(firstName);
-        lastNameInputBox.sendKeys(lastName);
-        addressInputBox.sendKeys(address);
-        cityInputBox.sendKeys(city);
-        stateInputBox.sendKeys(state);
-        zipInputBox.sendKeys(zip);
-        phoneInputBox.sendKeys(phone);
-        ssnInputBox.sendKeys(ssn);
-        usernameInputBox.sendKeys(username);
-        passwordInputBox.sendKeys(password);
-        repeatedPasswordInputBox.sendKeys(password);
+    public void openRegisterPage() {
+        driver.get(AppUrls.REGISTRATION_PAGE);
+    }
 
-        Log.info("Filled out all the required fields.");
+    public boolean isOnRegistrationPage() {
+        return driver.getCurrentUrl().contains("register");
+    }
+
+    public void register(Customer customer) {
+        type(firstNameInputBox, customer.getFirstName());
+        type(lastNameInputBox, customer.getLastName());
+        type(addressInputBox, customer.getAddress());
+        type(cityInputBox, customer.getCity());
+        type(stateInputBox, customer.getState());
+        type(zipInputBox, customer.getZip());
+        type(phoneInputBox, customer.getPhone());
+        type(ssnInputBox, customer.getSsn());
+
+        type(usernameInputBox, customer.getUsername());
+        type(passwordInputBox, customer.getPassword());
+        type(confirmPassInputBox, customer.getPassword());
+
+        clickRegisterButton();
     }
 
     public void clickRegisterButton() {
@@ -102,6 +93,10 @@ public class RegisterPage extends HomePage {
         Log.info("Clicked Register button.");
     }
 
+    private void type(WebElement element, String value) {
+        element.clear();
+        element.sendKeys(value);
+    }
 
 
 }
