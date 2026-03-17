@@ -33,9 +33,8 @@ public class AuthStepDefs {
 
     private String user;
     private String password;
-    /*
-    ----------------------------------------------------
-     */
+
+
 
     @Given("the user on the Parabank registration page")
     public void the_user_on_the_parabank_registration_page() {

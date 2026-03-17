@@ -29,10 +29,11 @@ public class BrowserHooks {
     }
 
     @After("@UI") // Executes after each scenario tagged with @UI
-    public void tearDownBrowser() throws InterruptedException {
-       // Thread.sleep(5000);
+    public void tearDownBrowser() throws InterruptedException{
+        Thread.sleep(5000);
         DriverFactory.quitDriver(); // Quit WebDriver and clean up
         Log.info("Browser teardown completed.");
 
     }
+
 }

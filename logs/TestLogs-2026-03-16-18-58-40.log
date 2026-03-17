@@ -1,0 +1,20 @@
+2026-03-16 18:58:40 [main] INFO  utils.Log - Loaded JDBC driver: org.hsqldb.jdbcDriver
+2026-03-16 18:58:40 [main] INFO  utils.Log - Initializing browser setup...
+2026-03-16 18:58:40 [main] INFO  utils.Log - Launching Chrome browser...
+2026-03-16 18:58:42 [main] INFO  utils.Log - Navigating to: http://localhost:8080/parabank/index.htm
+2026-03-16 18:58:43 [main] INFO  utils.Log - Browser setup completed.
+2026-03-16 18:58:43 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2026-03-16 18:58:43 [main] INFO  utils.Log - Scenario: Customer should be able to create a checking account
+2026-03-16 18:58:43 [main] INFO  utils.Log - Tags: @UI, @smokeAccSer
+2026-03-16 18:58:43 [main] INFO  utils.Log - ===============================================================
+2026-03-16 18:58:44 [main] INFO  utils.Log - Enter login credentials and clicked login successfully
+2026-03-16 18:58:45 [main] INFO  utils.Log - Successfully clicked and navigated to open account page
+2026-03-16 18:58:45 [main] INFO  utils.Log - Verified customer is on the Open New Account page
+2026-03-16 18:58:46 [main] INFO  utils.Log - Customer successfully selected Checking account from dropdown
+2026-03-16 18:58:46 [main] INFO  utils.Log - Successfully selected the deposit account
+2026-03-16 18:58:47 [main] INFO  utils.Log - Customer has successfully created new checking account
+2026-03-16 18:58:47 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2026-03-16 18:58:47 [main] INFO  utils.Log - Scenario Status: PASSED
+2026-03-16 18:58:47 [main] INFO  utils.Log - =============================================================
+2026-03-16 18:58:52 [main] INFO  utils.Log - Tearing down the browser...
+2026-03-16 18:58:52 [main] INFO  utils.Log - Browser teardown completed.

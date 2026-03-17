@@ -98,6 +98,9 @@ public class HoldOn {
                                 ((JavascriptExecutor) driver1).executeScript(
                                         "arguments[0].scrollIntoView({block: 'center'});", e);
 
+                                // Highlight element before clicking
+                                CommonUtils.highlight(driver1, e);
+
                                 // Try normal click first
                                 try {
                                     e.click();
@@ -115,8 +118,6 @@ public class HoldOn {
                     }
                     return false; // Element not found, retry
                 });
-
-
     }
 
     /**

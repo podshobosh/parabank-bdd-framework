@@ -1,0 +1,10 @@
+2026-03-16 10:56:40 [main] INFO  utils.Log - Loaded JDBC driver: org.hsqldb.jdbcDriver
+2026-03-16 10:56:40 [main] INFO  utils.Log - ====================== STARTING SCENARIO ======================
+2026-03-16 10:56:40 [main] INFO  utils.Log - Scenario: Customer should be able to create a checking account
+2026-03-16 10:56:40 [main] INFO  utils.Log - Tags: 
+2026-03-16 10:56:40 [main] INFO  utils.Log - ===============================================================
+2026-03-16 10:56:40 [main] ERROR utils.Log - Scenario failed: Customer should be able to create a checking account
+2026-03-16 10:56:40 [main] WARN  utils.Log - Driver was null. Screenshot was not taken
+2026-03-16 10:56:40 [main] INFO  utils.Log - ====================== ENDING SCENARIO ======================
+2026-03-16 10:56:40 [main] INFO  utils.Log - Scenario Status: FAILED
+2026-03-16 10:56:40 [main] INFO  utils.Log - =============================================================

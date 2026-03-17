@@ -4,8 +4,10 @@ import factory.DriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonUtils {
+
 
     /**
      * Verifies that the current URL matches the expected URL.
@@ -87,15 +89,48 @@ public class CommonUtils {
         element.sendKeys(value);
     }
 
-    public static void highlight(WebDriver driver, WebElement element){
+    public static void highlight(WebDriver driver, WebElement element) {
         try {
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            String original = element.getAttribute("style");
-            if (original == null) original = "";
 
-            js.executeScript("arguments[0].setAttribute('style', arguments[1]);",
-                    element, original + "border: 3px solid red !important; background: rgba(255,0,0,0.08) !important;");
-            Thread.sleep(120);
-        }catch (Exception ignored){}
+            String originalStyle = element.getAttribute("style");
+            if (originalStyle == null) {
+                originalStyle = "";
+            }
+
+            js.executeScript("arguments[0].scrollIntoView({block:'center'});", element);
+
+            String highlightStyle = originalStyle +
+                    " outline: 3px solid red !important;" +
+                    " background-color: rgba(255, 0, 0, 0.12) !important;" +
+                    " display: inline-block;";
+
+            js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, highlightStyle);
+
+            Thread.sleep(500);
+
+            js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
+
+        } catch (Exception ignored) {
+        }
+    }
+
+    public static void sleep(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void selectFromDropdownWithText(WebElement el, String visibleText){
+        Select dropdown = new Select(el);
+        dropdown.selectByVisibleText(visibleText);
+    }
+
+    public static void selectFromDropdownWithIndex(WebElement el, int index){
+        Select dropdown = new Select(el);
+        dropdown.selectByIndex(index);
     }
 }
