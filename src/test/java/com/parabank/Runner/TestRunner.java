@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber.xml"             // Generates a JUnit-compatible XML report
         },
         monochrome = true,
-        tags = "@UI and @smokeAccSer",
+        tags = "@UI and @smokeLog",
         dryRun = false
 )
 public class TestRunner {

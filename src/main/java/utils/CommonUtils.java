@@ -1,6 +1,7 @@
 package utils;
 
 import factory.DriverFactory;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -132,5 +133,11 @@ public class CommonUtils {
     public static void selectFromDropdownWithIndex(WebElement el, int index){
         Select dropdown = new Select(el);
         dropdown.selectByIndex(index);
+    }
+
+    public static void dismissAlert(){
+        HoldOn.waitForAlertToPopUp(DriverFactory.getDriver());
+        Alert alert = DriverFactory.getDriver().switchTo().alert();
+        alert.dismiss();;
     }
 }

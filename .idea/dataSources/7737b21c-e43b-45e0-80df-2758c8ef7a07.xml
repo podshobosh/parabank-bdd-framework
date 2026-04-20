@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="HSQLDB (Local)">
-  <database-model serializer="dbm" dbms="HSQLDB" family-id="HSQLDB" format-version="4.54">
+  <database-model serializer="dbm" dbms="HSQLDB" family-id="HSQLDB" format-version="4.55">
     <root id="1">
       <ServerVersion>2.7.4</ServerVersion>
     </root>

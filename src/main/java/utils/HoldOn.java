@@ -60,6 +60,12 @@ public class HoldOn {
 
     }
 
+    public static void waitForAlertToPopUp(WebDriver driver){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(defaultWaitTime));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+
     /**
      * Safely clicks a single element: waits clickable, then normal click, JS fallback if intercepted.
      */

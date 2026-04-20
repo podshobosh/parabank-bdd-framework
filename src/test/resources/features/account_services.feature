@@ -4,7 +4,7 @@ Feature: Customer should be able to access and
 
   Background:
     When customer logs in with registered credentials
-@smokeAccSer
+@UI @smokeAccSer
   Scenario: Customer should be able to create a checking account
     Given customer clicks on Open New Account
     Then customer should be on the open account page
@@ -12,3 +12,4 @@ Feature: Customer should be able to access and
     And  customer selects an existing account to fund the new account
     When customer clicks create account button
     Then the new account should be created successfully
+    And a new checking account should be created for the customer in the database

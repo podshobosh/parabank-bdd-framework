@@ -1,12 +1,15 @@
 package com.parabank.stepdefinitions;
 
 import factory.DriverFactory;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.AccountPage;
+import utils.DatabaseUtils;
 import utils.Log;
 
 public class AccountServicesStepDefs {
@@ -55,7 +58,7 @@ public class AccountServicesStepDefs {
     @When("customer clicks create account button")
     public void customer_clicks_create_account_button() {
         accountPage.clickOpenAccountBttn();
-        System.out.println(" DEBUG: " + accountPage.getAccountOpenedMessage().getText());
+        Log.info("Customer has successfully clicked button");
     }
 
     @Then("the new account should be created successfully")
@@ -67,4 +70,8 @@ public class AccountServicesStepDefs {
         Log.info("Customer has successfully created new checking account");
     }
 
+    @And("a new checking account should be created for the customer in the database")
+    public void aNewCheckingAccountShouldBeCreatedForTheCustomerInTheDatabase() {
+
+    }
 }

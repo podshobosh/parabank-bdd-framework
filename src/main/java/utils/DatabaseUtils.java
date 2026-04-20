@@ -176,6 +176,24 @@ public final class DatabaseUtils {
         }
     }
 
+    public static int getAccountCountForCustomer(int customerID){
+        String query ="SELECT COUNT(*) AS CNT FROM ACCOUNT WHERE CUSTOMER_ID = ?";
+        Integer count = queryForInt(query, customerID);
+        return count == null ? 0 : count;
+    }
+
+    public static boolean accountExists(int accountId) {
+        String query = "SELECT COUNT(*) AS CNT FROM ACCOUNT WHERE ID = ?";
+        Integer count = queryForInt(query, accountId);
+        return count != null && count > 0;
+    }
+
+    public static Integer getCustomerIdForAccount(int accountId) {
+        String query = "SELECT CUSTOMER_ID FROM ACCOUNT WHERE ID = ?";
+        Integer id = queryForInt(query, accountId);
+        return id;
+    }
+
     /**
      * Close database connection
      */
