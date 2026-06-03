@@ -7,7 +7,7 @@
     <groupId>com.parabank</groupId>
     <artifactId>parabank-bdd-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>Java test automation framework for UI, API, and database integration testing with Selenium, Cucumber, REST-Assured, JDBC, Maven, and CI reporting.</description>
+    <description>Freedom Bank style SDET framework: Selenium, Cucumber BDD, REST-Assured, JDBC, Maven, reports</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

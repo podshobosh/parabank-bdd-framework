@@ -1,6 +1,7 @@
 package com.parabank.database;
 
 import api.ParabankApiClient;
+import db.assertions.BankingDbAssertions;
 import db.model.AccountRecord;
 import db.model.CustomerRecord;
 import db.repository.AccountRepository;
@@ -12,46 +13,33 @@ import utils.ConfigReader;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class BankingDatabaseValidationTest {
     private final CustomerRepository customerRepository = new CustomerRepository();
     private final AccountRepository accountRepository = new AccountRepository();
+    private final BankingDbAssertions bankingDbAssertions = new BankingDbAssertions();
     private final ParabankApiClient apiClient = new ParabankApiClient();
 
-    @Test(groups = {"db", "integration", "data-consistency"})
-    public void configuredCustomerShouldExistInDatabase() {
+    @Test(groups = {"db", "backend", "smoke"})
+    public void seedCustomerShouldHaveAccountsStoredInDatabase() {
         String username = ConfigReader.getProperty("test.user");
         int expectedCustomerId = Integer.parseInt(ConfigReader.getProperty("test.customer.id"));
 
         CustomerRecord customer = customerRepository.findByUsername(username)
-                .orElseThrow(() -> new AssertionError("Expected configured customer to exist. username=" + username));
+                .orElseThrow(() -> new AssertionError("No DB customer found for username=" + username));
+        List<AccountRecord> accounts = accountRepository.findAccountsByCustomerId(customer.id());
 
-        assertEquals(customer.id(), expectedCustomerId, "Configured customer id should match the database record");
+        assertEquals(customer.id(), expectedCustomerId, "Seed customer id should match config");
+        assertFalse(accounts.isEmpty(), "Seed customer should have banking accounts in DB");
+        assertTrue(accounts.stream().allMatch(account -> account.customerId() == customer.id()),
+                "Every returned account should belong to the requested customer");
     }
 
-    @Test(groups = {"db", "integration", "data-consistency"})
-    public void customerAccountsReturnedByApiShouldMatchDatabaseOwnership() {
-        int customerId = Integer.parseInt(ConfigReader.getProperty("test.customer.id"));
-
-        List<AccountRecord> databaseAccounts = accountRepository.findAccountsByCustomerId(customerId);
-        Response response = apiClient.getAccountsForCustomer(customerId);
-
-        response.then().statusCode(200);
-        List<Integer> apiAccountIds = response.jsonPath().getList("id");
-
-        assertFalse(databaseAccounts.isEmpty(), "Database should contain accounts for the configured customer");
-        assertEquals(apiAccountIds.size(), databaseAccounts.size(), "API and DB should return the same account count");
-
-        for (AccountRecord databaseAccount : databaseAccounts) {
-            response.then().body("find { it.id == " + databaseAccount.id() + " }.customerId", equalTo(customerId));
-        }
-    }
-
-    @Test(groups = {"db", "integration", "data-consistency"})
-    public void accountDetailApiShouldMatchPersistedAccountRecord() {
+    @Test(groups = {"db", "backend", "api-contract"})
+    public void accountApiResponseShouldMatchDatabaseLedger() {
         int customerId = Integer.parseInt(ConfigReader.getProperty("test.customer.id"));
         AccountRecord databaseAccount = accountRepository.findAccountsByCustomerId(customerId).get(0);
 
@@ -61,9 +49,16 @@ public class BankingDatabaseValidationTest {
         assertEquals(response.jsonPath().getInt("id"), databaseAccount.id());
         assertEquals(response.jsonPath().getInt("customerId"), databaseAccount.customerId());
         assertEquals(response.jsonPath().getString("type"), databaseAccount.type());
-
         BigDecimal apiBalance = new BigDecimal(response.jsonPath().getString("balance"));
         assertEquals(apiBalance.compareTo(databaseAccount.balance()), 0,
-                "API balance should numerically match the persisted account balance");
+                "API balance should numerically match DB balance regardless of decimal scale");
+    }
+
+    @Test(groups = {"db", "backend", "business-rule"})
+    public void dbAssertionLayerShouldValidateCustomerAccountOwnership() {
+        int customerId = Integer.parseInt(ConfigReader.getProperty("test.customer.id"));
+        int accountId = accountRepository.findAccountsByCustomerId(customerId).get(0).id();
+
+        bankingDbAssertions.assertAccountBelongsToCustomer(accountId, customerId);
     }
 }

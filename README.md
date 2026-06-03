@@ -1,43 +1,54 @@
-# Parabank Test Automation Framework
+# Parabank End-to-End SDET Automation Framework
 
-A Java-based automation framework for the Parabank banking demo application. The project demonstrates UI, API, database integration checks, BDD test design, Maven execution, and CI-ready reporting using a maintainable layered structure.
+This is a Freedom Bank style QA automation framework for the local Docker Parabank app.
 
-## Tech stack
+## Tech stack covered
 
-- Java 11
-- Selenium WebDriver
-- Cucumber BDD
-- TestNG
-- REST-Assured
-- JDBC / SQL for targeted data consistency checks
-- Maven
-- Jenkins Pipeline
-- Docker-hosted Parabank test environment
+- Java OOP: POJO model, utility classes, factory pattern, reusable methods
+- Selenium WebDriver: UI automation with Page Object Model and PageFactory
+- Cucumber BDD: feature files, step definitions, hooks, runner, tags
+- TestNG: Maven executes Cucumber and REST tests through TestNG provider
+- REST-Assured: API validation against Parabank service endpoints
+- JDBC / SQL: backend validation with PreparedStatement, repository layer, external SQL files, row mappers, and DB-to-API comparison against Docker HSQLDB
+- Maven: dependency management and test lifecycle
+- Reports: Cucumber HTML/JSON/JUnit XML and Surefire/TestNG reports
+- Jenkins-ready: Jenkinsfile runs the Maven suite and publishes reports
 
-## What this framework demonstrates
+## Prerequisites
 
-- Page Object Model for reusable UI automation
-- ThreadLocal WebDriver factory for future parallel execution support
-- Config reader with Maven/system property overrides
-- Config-driven test users and generated data helpers
-- Scenario context for sharing runtime data between Cucumber steps
-- REST-Assured API client layer for service-level validation
-- Targeted JDBC repository layer for integration/data consistency checks
-- Cucumber, Surefire, and JUnit XML reporting
-- Jenkinsfile for CI execution
+Parabank Docker container should be running:
 
-## Test strategy
+```bash
+docker start parabank
+curl -I http://localhost:8080/parabank/index.htm
+```
 
-The framework separates validation responsibilities instead of using every tool in every test.
+Expected exposed ports:
 
-### UI end-to-end flow
+- UI/API: http://localhost:8080/parabank
+- DB: jdbc:hsqldb:hsql://localhost:9001/parabank
 
-Cucumber + Selenium validates the user workflow:
+## Run tests
 
-1. Authenticate with a configured test customer
-2. Open a new checking account from the customer session
-3. Confirm the new account from the UI
-4. Verify the created account through the public Parabank API
+Headless Chrome, good for CI/Jenkins:
+
+```bash
+mvn clean test -Dheadless=true -Dbrowser=chrome
+```
+
+Visible Chrome, good for learning/debugging:
+
+```bash
+mvn clean test -Dheadless=false -Dbrowser=chrome
+```
+
+Run only Cucumber tags:
+
+```bash
+mvn clean test -Dcucumber.filter.tags='@e2e' -Dheadless=true
+```
+
+## Main test flow
 
 Feature file:
 
@@ -45,90 +56,35 @@ Feature file:
 src/test/resources/features/e2e_banking_journey.feature
 ```
 
-### API tests
+Scenario covers:
 
-REST-Assured validates service endpoints directly:
+1. Register a new customer through UI
+2. Validate customer exists in DB using JDBC
+3. Logout and login with the new customer
+4. Open a new checking account through UI
+5. Validate account exists and ownership is correct using repository-backed JDBC assertions
+6. Validate account through REST-Assured API
+7. Compare API account response with database account record
 
-```text
-src/test/java/com/parabank/api/ParabankApiTest.java
-src/test/java/api/ParabankApiClient.java
-```
-
-### Database integration checks
-
-JDBC is used as a targeted integration validation layer, not as a replacement for UI or API assertions. These tests verify that service-visible account data is consistent with persisted database records in the local Docker test environment.
-
-```text
-src/test/java/com/parabank/database/BankingDatabaseValidationTest.java
-src/test/java/db/repository/
-src/test/resources/sql/
-```
-
-This mirrors a common automation pattern: UI tests validate user behavior, API tests validate service contracts, and DB checks are reserved for controlled integration/data consistency scenarios where direct database access is available.
-
-## Project structure
+## Important framework layers
 
 ```text
-src/main/java/factory/DriverFactory.java       ThreadLocal WebDriver management
+src/main/java/factory/DriverFactory.java       Singleton-style ThreadLocal WebDriver manager
 src/main/java/pages/                           Page Object Model classes
-src/main/java/models/Customer.java             Customer test data model
-src/main/java/utils/ConfigReader.java          Configuration and system property reader
-src/main/java/utils/ScenarioContext.java       Scenario-level runtime state
-src/main/java/utils/TestDataFactory.java       Test data generation
-src/test/java/api/ParabankApiClient.java       REST-Assured client wrapper
-src/test/java/com/parabank/api/                API tests
-src/test/java/com/parabank/database/           Database integration/data consistency tests
-src/test/java/com/parabank/Runner/             Cucumber TestNG runner
+src/main/java/models/Customer.java             POJO for customer test data
+src/main/java/utils/ConfigReader.java          Config + system property reader
+src/main/java/utils/DatabaseUtils.java         JDBC connection manager only
+src/test/java/db/core/                         Professional JDBC template, SQL loader, row mapper
+src/test/java/db/model/                        DB result models for customer/account records
+src/test/java/db/repository/                   Repository classes that hide SQL from tests
+src/test/java/db/assertions/                   Reusable banking DB assertion layer
+src/test/resources/sql/                        External SQL used by repository methods
+src/test/java/com/parabank/database/           Backend database validation tests
+src/main/java/utils/ScenarioContext.java       Scenario-level shared test state
 src/test/java/com/parabank/stepdefinitions/    Cucumber step definitions
-src/test/java/db/core/                         JDBC template, SQL loader, row mapper
-src/test/java/db/model/                        Database record models
-src/test/java/db/repository/                   Repository classes for SQL queries
-src/test/resources/features/                   Cucumber feature files
-src/test/resources/sql/                        Externalized SQL queries
-```
-
-## Prerequisites
-
-Parabank should be running locally through Docker:
-
-```bash
-docker start parabank
-curl -I http://localhost:8080/parabank/index.htm
-```
-
-Expected endpoints:
-
-```text
-UI:  http://localhost:8080/parabank
-API: http://localhost:8080/parabank/services/bank
-DB:  jdbc:hsqldb:hsql://localhost:9001/parabank
-```
-
-## Run tests
-
-Headless Chrome:
-
-```bash
-mvn clean test -Dheadless=true -Dbrowser=chrome
-```
-
-Visible Chrome:
-
-```bash
-mvn clean test -Dheadless=false -Dbrowser=chrome
-```
-
-Run only Cucumber E2E scenarios:
-
-```bash
-mvn clean test -Dcucumber.filter.tags='@e2e' -Dheadless=true
-```
-
-Run by TestNG groups:
-
-```bash
-mvn clean test -Dgroups=api
-mvn clean test -Dgroups=db
+src/test/java/com/parabank/api/                TestNG REST-Assured API tests
+src/test/java/api/ParabankApiClient.java       Reusable API client layer
+src/main/java/hooks/                           Cucumber hooks for browser/DB setup
 ```
 
 ## Reports

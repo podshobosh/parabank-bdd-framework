@@ -1,6 +1,8 @@
 package com.parabank.stepdefinitions;
 
 import factory.DriverFactory;
+import db.assertions.BankingDbAssertions;
+import db.model.CustomerRecord;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,27 +17,30 @@ import utils.TestDataFactory;
 
 import java.util.Map;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class AuthStepDefs {
     private final WebDriver driver;
     private final RegisterPage registerPage;
     private final AccountPage accountPage;
+    private final BankingDbAssertions bankingDbAssertions;
 
     public AuthStepDefs() {
         this.driver = DriverFactory.getDriver();
         this.registerPage = new RegisterPage();
         this.accountPage = new AccountPage();
+        this.bankingDbAssertions = new BankingDbAssertions();
     }
 
-    @Given("the customer is on the registration page")
+    @Given("the user on the Parabank registration page")
     public void the_user_on_the_parabank_registration_page() {
         registerPage.openRegisterPage();
         assertTrue(registerPage.isOnRegistrationPage());
         Log.info("Verified user is on the registration page");
     }
 
-    @When("the customer registers with valid generated profile information")
+    @When("user registers with generated valid customer details")
     public void user_registers_with_generated_valid_customer_details() {
         Customer customer = TestDataFactory.validRetailBankingCustomer();
         ScenarioContext.put("customer", customer);
@@ -67,22 +72,31 @@ public class AuthStepDefs {
         Log.info("User entered all required registration data");
     }
 
-    @Then("the customer registration should be successful")
+    @Then("registration should succeed")
     public void registration_should_succeed() {
+        assertTrue(accountPage.isWelcomeMessageVisible());
         assertTrue(accountPage.isWelcomeUserVisible());
         Log.info("Verified registration success page");
     }
 
-    @When("the customer signs out")
+    @Then("customer should exist in the database")
+    public void customer_should_exist_in_the_database() {
+        Customer customer = (Customer) ScenarioContext.get("customer");
+        assertNotNull("Customer object is null; registration step probably did not run.", customer);
+        CustomerRecord customerRecord = bankingDbAssertions.assertCustomerWasPersisted(customer.getUsername());
+        ScenarioContext.put("customerId", customerRecord.id());
+        Log.info("Verified CUSTOMER table persistence through repository layer. customerId=" + customerRecord.id());
+    }
+
+    @When("customer logs out")
     public void customer_logs_out() {
         driver.get(ConfigReader.getProperty("base.ui.url") + "/logout.htm");
         Log.info("Customer logged out");
     }
 
-    @When("the customer signs in with the newly registered credentials")
+    @When("customer logs in with the newly registered credentials")
     public void customer_logs_in_with_the_newly_registered_credentials() {
         accountPage.login(ScenarioContext.getString("username"), ScenarioContext.getString("password"));
-        accountPage.openAccountsOverviewPage();
         Log.info("Logged in with newly registered credentials");
     }
 
