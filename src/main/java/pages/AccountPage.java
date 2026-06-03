@@ -7,46 +7,40 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.AppUrls;
 import utils.CommonUtils;
 import utils.HoldOn;
-import utils.Log;
-
-import java.util.List;
 
 public class AccountPage extends HomePage {
     private final WebDriver driver;
 
     public AccountPage() {
-
         this.driver = DriverFactory.getDriver();
-        PageFactory.initElements(driver, this.driver);
+        PageFactory.initElements(this.driver, this);
     }
+
     @Getter
-    @FindBy(xpath = "//div[@id ='rightPanel']/h1")
+    @FindBy(xpath = "//div[@id='rightPanel']/h1")
     private WebElement welcomeUserHeader;
 
-
     @Getter
-    @FindBy(xpath = "//p[text()='Your account was created successfully. You are now logged in.']")
+    @FindBy(xpath = "//p[contains(.,'Your account was created successfully')]")
     private WebElement successMessage;
 
     @FindBy(xpath = "//h1[contains(.,'Accounts Overview')]")
     private WebElement accountOverviewText;
 
-    @FindBy(xpath = "//div[@id='leftPanel']/ul/li")
-    private List<WebElement> accountServicesLinks;
-
     @Getter
-    @FindBy(xpath = "//h1[contains(text(), 'Open New Account')]")
+    @FindBy(xpath = "//h1[contains(.,'Open New Account')]")
     private WebElement openNewAccountMessage;
 
-    @FindBy(xpath = "//input[@type='button']")
+    @FindBy(xpath = "//input[@value='Open New Account']")
     private WebElement openAccountButton;
 
     @FindBy(id = "type")
     private WebElement accountTypeDropdown;
 
-    @FindBy(id = "type")
+    @FindBy(id = "fromAccountId")
     private WebElement existingAccountDropdown;
 
     @Getter
@@ -57,87 +51,62 @@ public class AccountPage extends HomePage {
     @FindBy(xpath = "//p[contains(.,'Congratulations')]")
     private WebElement congratulationMessage;
 
+    @FindBy(id = "newAccountId")
+    private WebElement newAccountIdLink;
 
-    private final By accServices = By.xpath("//div[@id='leftPanel']/ul/li");
+    private final By accountServicesLinks = By.xpath("//div[@id='leftPanel']//a");
 
-
-
-
-
-
-
-
-    public boolean isWelcomeUserVisible(){
-       if (welcomeUserHeader.isDisplayed()){
-           Log.info("Welcome {username} header is visible");
-           return true;
-       }
-       Log.error("Welcome {username} header is not visible");
-        return false;
-
+    public void openAccountsOverviewPage() {
+        driver.get(AppUrls.BASE_URL + "/overview.htm");
+        HoldOn.waitForPageToLoad(driver);
     }
 
-    public boolean isAccountOverviewTextDisplayed(){
-        if (accountOverviewText.isDisplayed()){
-            Log.info("Account Overview is displayed");
-            return true;
-        }
-        Log.error("Account Overview test is not displayed");
-        return false;
+    public boolean isWelcomeUserVisible() {
+        HoldOn.waitForElementToBeVisible(driver, welcomeUserHeader);
+        return welcomeUserHeader.isDisplayed();
     }
 
-    public boolean isWelcomeMessageVisible(){
-        if (successMessage.isDisplayed()){
-            Log.info("'User created successfully' message is visible");
-            return true;
-        }
-        Log.error("'User created successfully' message is NOT visible");
-        return false;
+    public boolean isAccountOverviewTextDisplayed() {
+        HoldOn.waitForElementToBeVisible(driver, accountOverviewText);
+        return accountOverviewText.isDisplayed();
     }
 
-    public void clickOnSelectService(List<WebElement> services, String serviceText){
-        for (WebElement service : services) {
-            if (service.getText().contains(serviceText)){
-                CommonUtils.highlight(driver, service);
-                CommonUtils.sleep(5);
-                HoldOn.safeClick(driver, service);
-            }
-        }
+    public boolean isWelcomeMessageVisible() {
+        HoldOn.waitForElementToBeVisible(driver, successMessage);
+        return successMessage.isDisplayed();
     }
 
-    public void goToNewAccount(){
-        //clickOnSelectService(accountServicesLinks, "Open New Account");
-        HoldOn.clickOnElementInList(driver, accServices, "Open New Account");
+    public void goToNewAccount() {
+        HoldOn.clickOnElementInList(driver, accountServicesLinks, "Open New Account");
+        HoldOn.waitForElementToBeVisible(driver, openNewAccountMessage);
     }
 
-    public void highlightMessage(){
-        CommonUtils.highlight(driver,openNewAccountMessage);
+    public void highlightMessage() {
+        CommonUtils.highlight(driver, openNewAccountMessage);
     }
 
-    public void selectCheckingAccount(){
-        CommonUtils.highlight(driver, accountTypeDropdown);
+    public void selectCheckingAccount() {
+        HoldOn.waitForElementToBeVisible(driver, accountTypeDropdown);
         CommonUtils.selectFromDropdownWithText(accountTypeDropdown, "CHECKING");
     }
 
-    public void selectDepositAccount(){
-        CommonUtils.highlight(driver, existingAccountDropdown);
-       CommonUtils.selectFromDropdownWithIndex(existingAccountDropdown, 0);
+    public void selectDepositAccount() {
+        HoldOn.waitForElementToBeVisible(driver, existingAccountDropdown);
+        CommonUtils.selectFromDropdownWithIndex(existingAccountDropdown, 0);
     }
 
-    public void clickOpenAccountBttn(){
+    public void clickOpenAccountBttn() {
+        HoldOn.waitForElementToBeClickable(driver, openAccountButton);
         openAccountButton.click();
     }
 
-    public boolean isConfirmationMessageVisible(){
+    public boolean isConfirmationMessageVisible() {
         HoldOn.waitForElementToBeVisible(driver, accountOpenedMessage);
         return accountOpenedMessage.isDisplayed();
     }
 
-
-
-
-
-
-
+    public int getNewAccountId() {
+        HoldOn.waitForElementToBeVisible(driver, newAccountIdLink);
+        return Integer.parseInt(newAccountIdLink.getText().trim());
+    }
 }
-

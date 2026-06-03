@@ -1,38 +1,33 @@
 package hooks;
 
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
-import org.openqa.selenium.WebDriver;
 import factory.DriverFactory;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
 import utils.ConfigReader;
 import utils.HoldOn;
 import utils.Log;
+import utils.ScenarioContext;
 
 public class BrowserHooks {
-
     private WebDriver driver;
 
-    @Before("@UI or @Test") // Executes before each scenario tagged with @UI
-
+    @Before("@UI or @Test")
     public void setUpBrowser() {
         Log.info("Initializing browser setup...");
-        driver = DriverFactory.getDriver(); // Initialize WebDriver
-        driver.manage().deleteAllCookies(); // Clear cookies
-        driver.manage().window().maximize(); // Maximize the browser window
-
+        driver = DriverFactory.getDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().window().maximize();
         String baseUrl = ConfigReader.getProperty("home.page.url");
         Log.info("Navigating to: " + baseUrl);
-        driver.get(baseUrl); // Navigate to the base URL
-
-        HoldOn.waitForPageToLoad(driver); // Ensure page is fully loaded
+        driver.get(baseUrl);
+        HoldOn.waitForPageToLoad(driver);
         Log.info("Browser setup completed.");
     }
 
-    @After("@UI") // Executes after each scenario tagged with @UI
-    public void tearDownBrowser() throws InterruptedException {
-        Thread.sleep(5000);
-       DriverFactory.quitDriver();
-
+    @After("@UI or @Test")
+    public void tearDownBrowser() {
+        DriverFactory.quitDriver();
+        ScenarioContext.clear();
     }
-
 }

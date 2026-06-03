@@ -1,305 +1,100 @@
-# Parabank BDD Automation Framework (UI + DB)
+# Parabank End-to-End SDET Automation Framework
 
-End-to-end automation framework for the Parasoft **Parabank** banking demo application using **Cucumber BDD + Selenium** with optional **DB validation** (HSQLDB via JDBC).
+This is a Freedom Bank style QA automation framework for the local Docker Parabank app.
 
-This project is designed to demonstrate real-world banking automation patterns such as authentication, customer registration, account workflows, and database persistence validation using industry-style automation design.
+## Tech stack covered
 
----
-
-## Tech Stack
-
-- **Java 11**
-- **Maven**
-- **Selenium WebDriver**
-- **Cucumber BDD**
-- **JUnit 4**
-- **Log4j2**
-- **HSQLDB JDBC**
-- **Docker** (for local Parabank environment)
-
----
-
-## Project Goal
-
-This framework was built to automate critical banking flows in a realistic retail banking demo environment. The goal is to practice and demonstrate automation skills that apply to real banking systems, including:
-
-- UI automation using Selenium
-- BDD-style scenario design with Cucumber
-- Reusable Page Object Model design
-- Database validation using JDBC
-- Stable test data handling
-- Local test environment setup with Docker
-
----
-
-## System Under Test
-
-This project runs against **Parabank locally in Docker** so that UI and database validations use the same environment.
-
-### Local URLs
-- **UI:** `http://localhost:8080/parabank`
-- **DB:** `jdbc:hsqldb:hsql://localhost:9001/parabank`
-
----
+- Java OOP: POJO model, utility classes, factory pattern, reusable methods
+- Selenium WebDriver: UI automation with Page Object Model and PageFactory
+- Cucumber BDD: feature files, step definitions, hooks, runner, tags
+- TestNG: Maven executes Cucumber and REST tests through TestNG provider
+- REST-Assured: API validation against Parabank service endpoints
+- JDBC / SQL: backend validation with PreparedStatement, repository layer, external SQL files, row mappers, and DB-to-API comparison against Docker HSQLDB
+- Maven: dependency management and test lifecycle
+- Reports: Cucumber HTML/JSON/JUnit XML and Surefire/TestNG reports
+- Jenkins-ready: Jenkinsfile runs the Maven suite and publishes reports
 
 ## Prerequisites
 
-Make sure the following are installed:
-
-- Java 11
-- Maven
-- Docker Desktop
-- Google Chrome
-- IntelliJ IDEA (recommended)
-
-You can verify your setup with:
+Parabank Docker container should be running:
 
 ```bash
-java -version
-mvn -version
-docker --version
+docker start parabank
+curl -I http://localhost:8080/parabank/index.htm
 ```
-## Running Parabank Locally with Docker
 
-### Pull the Parabank Docker image
+Expected exposed ports:
+
+- UI/API: http://localhost:8080/parabank
+- DB: jdbc:hsqldb:hsql://localhost:9001/parabank
+
+## Run tests
+
+Headless Chrome, good for CI/Jenkins:
+
 ```bash
-docker pull parasoft/parabank:latest
+mvn clean test -Dheadless=true -Dbrowser=chrome
 ```
 
-Run the Parabank container
+Visible Chrome, good for learning/debugging:
+
 ```bash
-docker run -d --name parabank \
-  -p 8080:8080 \
-  -p 9001:9001 \
-  parasoft/parabank:latest
+mvn clean test -Dheadless=false -Dbrowser=chrome
 ```
 
-Verify it is running
+Run only Cucumber tags:
+
 ```bash
-docker ps
-nc -vz localhost 9001
+mvn clean test -Dcucumber.filter.tags='@e2e' -Dheadless=true
 ```
 
-Open the application:
-http://localhost:8080/parabank
+## Main test flow
 
-
-Configuration
-
-Edit src/test/resources/config.properties and make sure it contains valid local settings.
-
-Example:
-
-# UI
-```bash
-home.page.url=http://localhost:8080/parabank/index.htm
-browser=chrome
-headless=false
-default.wait.time=10
-page.load.timeout=30
-element.visibility.timeout=15
-screenshot.dir=screenshots
-```
-
-# DB
-```bash
-DB_URL=jdbc:hsqldb:hsql://localhost:9001/parabank
-DB_USER=sa
-DB_PASS=
-DB_DRIVER=org.hsqldb.jdbcDriver
-```
-
-# Optional login test user
-```bash
-login.username=YOUR_SEEDED_USER
-login.password=YOUR_SEEDED_PASSWORD
-```
-
-Important: do not include spaces around = in properties.
-Use DB_USER=sa, not DB_USER = sa.
-
-Running Tests
-Run all tests
-```bash
-mvn clean test
-```
-Run the JUnit runner directly
-```bash
-mvn -Dtest=TestRunner test
-Run tests by tag
-mvn test -Dcucumber.filter.tags="@smoke"
-mvn test -Dcucumber.filter.tags="@sanity"
-mvn test -Dcucumber.filter.tags="@DB"
-```
-
-## Test Design Strategy
-
-This framework follows a practical industry-style strategy.
-
-### Smoke Tests
-
-Fast, stable tests that verify the system is up and basic core flows work.
-
-Typical smoke coverage:
-
-- Login with a seeded user
-- Accounts Overview page loads
-- Logout works
-
-### Sanity Tests
-
-Focused end-to-end flows that validate core business functionality after changes.
-
-Typical sanity coverage:
-
-- Registration
-- Login
-- Open new account
-- Transfer funds
-- DB validation for critical persistence checks
-
----
-
-## Test Data Strategy
-
-### Login Tests
-
-Login smoke tests use a **pre-seeded user** stored in config properties.
-
-### Registration Tests
-
-Registration tests generate a **unique username per run** to avoid collisions and keep tests independent.
-
-Typical pattern:
-
-- static valid defaults for non-unique fields
-- runtime-generated username
-- database query to validate persistence
-
-This avoids DB cleanup and keeps tests repeatable.
-
----
-
-## Database Validation
-
-Database validation is performed using JDBC queries against the Parabank Docker HSQLDB instance.
-
-Example validations include:
-
-- registered customer exists in `CUSTOMER`
-- account created in `ACCOUNT`
-- transaction recorded in `TRANSACTION`
-
-
-## Project Structure
+Feature file:
 
 ```text
-src
-├── main
-│   └── java
-│       ├── factory/              # WebDriver factory
-│       ├── models/               # Data models (e.g. Customer)
-│       ├── pages/                # Page Object Model classes
-│       └── utils/                # Utilities
-│
-├── test
-│   ├── java
-│   │   ├── com/parabank/Runner/              # JUnit runner
-│   │   ├── com/parabank/stepdefinitions/     # Step definitions
-│   │   └── hooks/                            # Hooks
-│   │
-│   └── resources
-│       ├── features/             # Cucumber feature files
-│       ├── config.properties
-│       └── log4j2.xml
+src/test/resources/features/e2e_banking_journey.feature
 ```
 
-## Page Object Model
+Scenario covers:
 
-This framework uses the **Page Object Model (POM)** for maintainability and readability.
+1. Register a new customer through UI
+2. Validate customer exists in DB using JDBC
+3. Logout and login with the new customer
+4. Open a new checking account through UI
+5. Validate account exists and ownership is correct using repository-backed JDBC assertions
+6. Validate account through REST-Assured API
+7. Compare API account response with database account record
 
-Page objects are responsible for:
-
-- locating elements
-- interacting with the UI
-- exposing reusable page actions
-
-Step definitions are responsible for:
-
-- scenario flow
-- assertions
-- test data setup
-- DB validation calls
-
----
-
-## Example Features Covered
-
-- Registering a new customer
-- Logging in with valid credentials
-- Login page smoke validation
-- Customer persistence validation in the database
-- Accounts Overview validation
-- Transfer funds
-
----
-
-## Troubleshooting
-
-### 404 on localhost:8080
-
-Use:
+## Important framework layers
 
 ```text
-http://localhost:8080/parabank
+src/main/java/factory/DriverFactory.java       Singleton-style ThreadLocal WebDriver manager
+src/main/java/pages/                           Page Object Model classes
+src/main/java/models/Customer.java             POJO for customer test data
+src/main/java/utils/ConfigReader.java          Config + system property reader
+src/main/java/utils/DatabaseUtils.java         JDBC connection manager only
+src/test/java/db/core/                         Professional JDBC template, SQL loader, row mapper
+src/test/java/db/model/                        DB result models for customer/account records
+src/test/java/db/repository/                   Repository classes that hide SQL from tests
+src/test/java/db/assertions/                   Reusable banking DB assertion layer
+src/test/resources/sql/                        External SQL used by repository methods
+src/test/java/com/parabank/database/           Backend database validation tests
+src/main/java/utils/ScenarioContext.java       Scenario-level shared test state
+src/test/java/com/parabank/stepdefinitions/    Cucumber step definitions
+src/test/java/com/parabank/api/                TestNG REST-Assured API tests
+src/test/java/api/ParabankApiClient.java       Reusable API client layer
+src/main/java/hooks/                           Cucumber hooks for browser/DB setup
 ```
-### Database Driver Not Found
 
-Make sure:
+## Reports
 
-- `DB_DRIVER=org.hsqldb.jdbcDriver`
-- `pom.xml` includes the HSQLDB dependency
-
-### No Features Found
-
-Check that feature files are placed under:
+After execution:
 
 ```text
-src/test/resources/features/
+target/cucumber-reports.html
+target/cucumber.json
+target/cucumber.xml
+target/surefire-reports/
+logs/
 ```
-
-## Undefined Steps
-
-Check:
-
-- package name of step definition class
-- runner glue configuration
-- exact Gherkin text match
-
----
-
-## Future Enhancements
-
-- Transfer funds automation
-- Database balance verification
-- HTML reporting
-- CI pipeline with GitHub Actions
-- API layer for faster test setup
-- Parallel test execution
-
----
-
-## Author
-
-Automation framework built as part of hands-on Selenium and Cucumber BDD practice using the Parabank banking demo application.
-
-
-  
-
-
-
-
-
-
-
-
