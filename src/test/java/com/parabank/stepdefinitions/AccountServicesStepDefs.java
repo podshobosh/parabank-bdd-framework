@@ -29,34 +29,34 @@ public class AccountServicesStepDefs {
         this.bankingDbAssertions = new BankingDbAssertions();
     }
 
-    @Given("customer clicks on Open New Account")
+    @When("the customer navigates to Open New Account")
     public void customer_clicks_on_open_new_account() {
         accountPage.goToNewAccount();
         Log.info("Navigated to Open New Account page");
     }
 
-    @Then("customer should be on the open account page")
+    @Then("the Open New Account page should be displayed")
     public void customer_should_be_on_the_open_account_page() {
         accountPage.highlightMessage();
         Assert.assertTrue("Open New Account header is not displayed", accountPage.getOpenNewAccountMessage().isDisplayed());
     }
 
-    @Then("customer customer selects checking account dropdown")
+    @Then("the customer selects Checking as the account type")
     public void customer_customer_selects_checking_account_dropdown() {
         accountPage.selectCheckingAccount();
     }
 
-    @Then("customer selects an existing account to fund the new account")
+    @Then("the customer selects an existing funding account")
     public void customer_selects_an_existing_account_to_fund_the_new_account() {
         accountPage.selectDepositAccount();
     }
 
-    @When("customer clicks create account button")
+    @When("the customer submits the open account request")
     public void customer_clicks_create_account_button() {
         accountPage.clickOpenAccountBttn();
     }
 
-    @Then("the new account should be created successfully")
+    @Then("the new checking account should be displayed in the UI")
     public void the_new_account_should_be_created_successfully() {
         Assert.assertTrue("Account Opened message is missing", accountPage.isConfirmationMessageVisible());
         Assert.assertTrue("Congratulations message is missing", accountPage.getCongratulationMessage().isDisplayed());
@@ -65,7 +65,7 @@ public class AccountServicesStepDefs {
         Log.info("New checking account created with id=" + newAccountId);
     }
 
-    @And("a new checking account should be created for the customer in the database")
+    @And("the new checking account should belong to the customer in the database")
     public void a_new_checking_account_should_be_created_for_the_customer_in_the_database() {
         Integer accountId = ScenarioContext.getInteger("newAccountId");
         Integer customerId = ScenarioContext.getInteger("customerId");
@@ -74,7 +74,7 @@ public class AccountServicesStepDefs {
         bankingDbAssertions.assertAccountBelongsToCustomer(accountId, customerId);
     }
 
-    @And("the new account should be available from the Parabank accounts API")
+    @And("the new checking account should be retrievable from the accounts API")
     public void the_new_account_should_be_available_from_the_parabank_accounts_api() {
         Integer accountId = ScenarioContext.getInteger("newAccountId");
         Integer customerId = ScenarioContext.getInteger("customerId");

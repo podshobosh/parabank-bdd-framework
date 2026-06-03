@@ -33,14 +33,14 @@ public class AuthStepDefs {
         this.bankingDbAssertions = new BankingDbAssertions();
     }
 
-    @Given("the user on the Parabank registration page")
+    @Given("the customer is on the registration page")
     public void the_user_on_the_parabank_registration_page() {
         registerPage.openRegisterPage();
         assertTrue(registerPage.isOnRegistrationPage());
         Log.info("Verified user is on the registration page");
     }
 
-    @When("user registers with generated valid customer details")
+    @When("the customer registers with valid generated profile information")
     public void user_registers_with_generated_valid_customer_details() {
         Customer customer = TestDataFactory.validRetailBankingCustomer();
         ScenarioContext.put("customer", customer);
@@ -72,14 +72,14 @@ public class AuthStepDefs {
         Log.info("User entered all required registration data");
     }
 
-    @Then("registration should succeed")
+    @Then("the customer registration should be successful")
     public void registration_should_succeed() {
         assertTrue(accountPage.isWelcomeMessageVisible());
         assertTrue(accountPage.isWelcomeUserVisible());
         Log.info("Verified registration success page");
     }
 
-    @Then("customer should exist in the database")
+    @Then("the customer profile should be persisted in the database")
     public void customer_should_exist_in_the_database() {
         Customer customer = (Customer) ScenarioContext.get("customer");
         assertNotNull("Customer object is null; registration step probably did not run.", customer);
@@ -88,13 +88,13 @@ public class AuthStepDefs {
         Log.info("Verified CUSTOMER table persistence through repository layer. customerId=" + customerRecord.id());
     }
 
-    @When("customer logs out")
+    @When("the customer signs out")
     public void customer_logs_out() {
         driver.get(ConfigReader.getProperty("base.ui.url") + "/logout.htm");
         Log.info("Customer logged out");
     }
 
-    @When("customer logs in with the newly registered credentials")
+    @When("the customer signs in with the newly registered credentials")
     public void customer_logs_in_with_the_newly_registered_credentials() {
         accountPage.login(ScenarioContext.getString("username"), ScenarioContext.getString("password"));
         Log.info("Logged in with newly registered credentials");
@@ -103,6 +103,7 @@ public class AuthStepDefs {
     @When("customer logs in with registered credentials")
     public void customer_logs_in_with_registered_credentials() {
         accountPage.login(ConfigReader.getProperty("test.user"), ConfigReader.getProperty("test.pass"));
+        ScenarioContext.put("customerId", Integer.parseInt(ConfigReader.getProperty("test.customer.id")));
         Log.info("Logged in with configured smoke credentials");
     }
 

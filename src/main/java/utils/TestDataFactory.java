@@ -9,15 +9,15 @@ public final class TestDataFactory {
     public static Customer validRetailBankingCustomer() {
         String unique = String.valueOf(System.currentTimeMillis());
         return new Customer(
-                "Freedom",
-                "Tester",
-                "100 Banking Way",
-                "Leesburg",
+                "Jordan",
+                "Taylor",
+                "100 Market Street",
+                "Arlington",
                 "VA",
-                "20175",
+                "22201",
                 "703555" + unique.substring(unique.length() - 4),
                 "123" + unique.substring(unique.length() - 6),
-                "fb_qa_" + unique,
+                "qa_user_" + unique,
                 "Test@1234"
         );
     }

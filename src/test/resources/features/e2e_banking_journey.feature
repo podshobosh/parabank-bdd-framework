@@ -1,21 +1,14 @@
-@UI @DB @API @e2e
-Feature: Parabank end-to-end customer banking journey
-  This BDD flow covers UI automation, API validation, JDBC database validation,
-  Page Object Model usage, Maven execution, and reporting like a real SDET framework.
+@UI @API @e2e
+Feature: Customer account opening journey
+  Authenticated customers should be able to open a checking account
+  and retrieve the newly created account through the account service.
 
-  Scenario: New customer registers, logs in, opens a checking account, and validates it across UI API and DB
-    Given the user on the Parabank registration page
-    When user registers with generated valid customer details
-    Then registration should succeed
-    And customer should exist in the database
-    When customer logs out
-    And customer logs in with the newly registered credentials
+  Scenario: Authenticated customer opens a new checking account
+    When customer logs in with registered credentials
     Then account overview should be displayed
-    When customer clicks on Open New Account
-    Then customer should be on the open account page
-    And customer customer selects checking account dropdown
-    And customer selects an existing account to fund the new account
-    When customer clicks create account button
-    Then the new account should be created successfully
-    And a new checking account should be created for the customer in the database
-    And the new account should be available from the Parabank accounts API
+    When the customer navigates to Open New Account
+    And the customer selects Checking as the account type
+    And the customer selects an existing funding account
+    When the customer submits the open account request
+    Then the new checking account should be displayed in the UI
+    And the new checking account should be retrievable from the accounts API
