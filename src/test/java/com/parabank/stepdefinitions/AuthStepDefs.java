@@ -8,50 +8,47 @@ import models.Customer;
 import org.openqa.selenium.WebDriver;
 import pages.AccountPage;
 import pages.RegisterPage;
-import utils.CommonUtils;
 import utils.ConfigReader;
-import utils.DatabaseUtils;
 import utils.Log;
+import utils.ScenarioContext;
+import utils.TestDataFactory;
 
 import java.util.Map;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class AuthStepDefs {
-    private Customer customer;
-
     private final WebDriver driver;
-    private RegisterPage registerPage;
-    private AccountPage accountPage;
+    private final RegisterPage registerPage;
+    private final AccountPage accountPage;
 
     public AuthStepDefs() {
         this.driver = DriverFactory.getDriver();
-        registerPage = new RegisterPage();
-        accountPage = new AccountPage();
+        this.registerPage = new RegisterPage();
+        this.accountPage = new AccountPage();
     }
 
-    private String user;
-    private String password;
-
-
-
-    @Given("the user on the Parabank registration page")
+    @Given("the customer is on the registration page")
     public void the_user_on_the_parabank_registration_page() {
         registerPage.openRegisterPage();
         assertTrue(registerPage.isOnRegistrationPage());
         Log.info("Verified user is on the registration page");
     }
 
+    @When("the customer registers with valid generated profile information")
+    public void user_registers_with_generated_valid_customer_details() {
+        Customer customer = TestDataFactory.validRetailBankingCustomer();
+        ScenarioContext.put("customer", customer);
+        ScenarioContext.put("username", customer.getUsername());
+        ScenarioContext.put("password", customer.getPassword());
+        registerPage.register(customer);
+        Log.info("Registered generated customer username=" + customer.getUsername());
+    }
 
     @When("user registers with the valid customer details")
     public void user_registers_with_the_valid_customer_details(Map<String, String> credentials) {
         String uniqueUsername = "pb_" + System.currentTimeMillis();
-
-        this.user = uniqueUsername;
-        this.password = credentials.get("password");
-
-        customer = new Customer(
+        Customer customer = new Customer(
                 credentials.get("firstName"),
                 credentials.get("lastName"),
                 credentials.get("address"),
@@ -60,44 +57,44 @@ public class AuthStepDefs {
                 credentials.get("zip"),
                 credentials.get("phone"),
                 credentials.get("ssn"),
-                this.user,
-                this.password
+                uniqueUsername,
+                credentials.get("password")
         );
-
+        ScenarioContext.put("customer", customer);
+        ScenarioContext.put("username", customer.getUsername());
+        ScenarioContext.put("password", customer.getPassword());
         registerPage.register(customer);
-
-        Log.info("User entered all the required data and clicked register button");
+        Log.info("User entered all required registration data");
     }
 
-    @Then("registration should succeed")
+    @Then("the customer registration should be successful")
     public void registration_should_succeed() {
-        assertTrue(accountPage.isWelcomeMessageVisible());
         assertTrue(accountPage.isWelcomeUserVisible());
-
-        Log.info("Verified that user successfully created");
+        Log.info("Verified registration success page");
     }
 
-    @Then("customer should exist in the database")
-    public void customer_should_exist_in_the_database() {
-        assertNotNull("Customer object is null (registration step probably didn't run).", customer);
-
-        boolean exists = DatabaseUtils.verifyCustomerExists(customer.getUsername());
-        assertTrue("Customer should exist in DB for username=" + customer.getUsername(), exists);
+    @When("the customer signs out")
+    public void customer_logs_out() {
+        driver.get(ConfigReader.getProperty("base.ui.url") + "/logout.htm");
+        Log.info("Customer logged out");
     }
 
+    @When("the customer signs in with the newly registered credentials")
+    public void customer_logs_in_with_the_newly_registered_credentials() {
+        accountPage.login(ScenarioContext.getString("username"), ScenarioContext.getString("password"));
+        accountPage.openAccountsOverviewPage();
+        Log.info("Logged in with newly registered credentials");
+    }
 
     @When("customer logs in with registered credentials")
     public void customer_logs_in_with_registered_credentials() {
         accountPage.login(ConfigReader.getProperty("test.user"), ConfigReader.getProperty("test.pass"));
-        Log.info("Enter login credentials and clicked login successfully");
-
+        Log.info("Logged in with configured smoke credentials");
     }
 
     @Then("account overview should be displayed")
     public void account_overview_should_be_displayed() {
         assertTrue(accountPage.isAccountOverviewTextDisplayed());
-        Log.info("Verified that account overview is displayed");
-
+        Log.info("Verified account overview is displayed");
     }
-
 }

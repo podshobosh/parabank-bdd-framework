@@ -1,24 +1,20 @@
 package com.parabank.Runner;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-
-@RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
         glue = {"com.parabank.stepdefinitions", "hooks"},
-        plugin = {                                  // Report and output plugins
-                "pretty",                               // Prints Gherkin steps in the console
-                "html:target/cucumber-reports.html",    // Generates an HTML report
-                "json:target/cucumber.json",            // Generates a JSON report
-                "junit:target/cucumber.xml"             // Generates a JUnit-compatible XML report
+        plugin = {
+                "pretty",
+                "html:target/cucumber-reports.html",
+                "json:target/cucumber.json",
+                "junit:target/cucumber.xml"
         },
         monochrome = true,
-        tags = "@UI and @smokeLog",
+        tags = "@e2e",
         dryRun = false
 )
-public class TestRunner {
-
+public class TestRunner extends AbstractTestNGCucumberTests {
 }

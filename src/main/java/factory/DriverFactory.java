@@ -12,79 +12,68 @@ import utils.Log;
 
 import java.time.Duration;
 
-public class DriverFactory {
-    private static WebDriver driver;
+public final class DriverFactory {
+    private static final ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
-    // Method to initialize the WebDriver
-    public static WebDriver initializeDriver() {
-
-        // Defensive config handling
-        String browser = ConfigReader.getProperty("browser","chrome" ).trim().toLowerCase();
-        String headless = ConfigReader.getProperty("headless", "false").trim().toLowerCase();
-
-
-
-        try {
-            switch (browser) {
-                case "chrome":
-                    Log.info("Launching Chrome browser...");
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    if (headless.equals("true")) {
-                        Log.info("Running Chrome in headless mode.");
-                        chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1080");
-                    }
-                    driver = new ChromeDriver(chromeOptions);
-                    break;
-
-                case "firefox":
-                    Log.info("Launching Firefox browser...");
-                    FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    if (headless.equals("true")) {
-                        Log.info("Running Firefox in headless mode.");
-                        firefoxOptions.addArguments("--headless");
-                    }
-                    driver = new FirefoxDriver(firefoxOptions);
-                    break;
-
-                case "edge":
-                    Log.info("Launching Edge browser...");
-                    EdgeOptions edgeOptions = new EdgeOptions();
-                    if (headless.equals("true")) {
-                        Log.info("Running Edge in headless mode.");
-                        edgeOptions.addArguments("--headless");
-                    }
-                    driver = new EdgeDriver(edgeOptions);
-                    break;
-
-                default:
-                    throw new RuntimeException("Unsupported browser: " + browser);
-            }
-        } catch (Exception e) {
-            Log.error("Failed to initialize the WebDriver for browser: " + browser, e);
-            throw new RuntimeException(e);
-        }
-        return driver;
+    private DriverFactory() {
     }
 
-    // Getter for the WebDriver
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            driver = initializeDriver();
+    public static WebDriver initializeDriver() {
+        String browser = ConfigReader.getProperty("browser", "chrome").toLowerCase();
+        boolean headless = ConfigReader.getBooleanProperty("headless", true);
+
+        WebDriver webDriver;
+        switch (browser) {
+            case "chrome":
+                Log.info("Launching Chrome browser. headless=" + headless);
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080");
+                if (headless) {
+                    chromeOptions.addArguments("--headless=new");
+                }
+                webDriver = new ChromeDriver(chromeOptions);
+                break;
+            case "firefox":
+                Log.info("Launching Firefox browser. headless=" + headless);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                if (headless) {
+                    firefoxOptions.addArguments("--headless");
+                }
+                webDriver = new FirefoxDriver(firefoxOptions);
+                break;
+            case "edge":
+                Log.info("Launching Edge browser. headless=" + headless);
+                EdgeOptions edgeOptions = new EdgeOptions();
+                if (headless) {
+                    edgeOptions.addArguments("--headless=new");
+                }
+                webDriver = new EdgeDriver(edgeOptions);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
-        return driver;
+
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigReader.getIntProperty("page.load.timeout", 30)));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ZERO);
+        DRIVER.set(webDriver);
+        return webDriver;
+    }
+
+    public static WebDriver getDriver() {
+        WebDriver webDriver = DRIVER.get();
+        return webDriver == null ? initializeDriver() : webDriver;
     }
 
     public static WebDriver peekDriver() {
-        return driver;
+        return DRIVER.get();
     }
 
-
-    // Method to quit the driver
     public static void quitDriver() {
-        if (driver != null) {
+        WebDriver webDriver = DRIVER.get();
+        if (webDriver != null) {
             Log.info("Tearing down the browser...");
-            driver.quit();
-            driver = null;
+            webDriver.quit();
+            DRIVER.remove();
         }
     }
 }

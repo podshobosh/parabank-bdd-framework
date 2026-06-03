@@ -1,0 +1,7 @@
+SELECT
+    ID,
+    CUSTOMER_ID,
+    TYPE,
+    BALANCE
+FROM ACCOUNT
+WHERE ID = ?

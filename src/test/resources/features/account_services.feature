@@ -1,15 +1,14 @@
-@UI
-Feature: Customer should be able to access and
-        interact with all the different account services that are provided
+@UI @account
+Feature: Account services
+  Authenticated customers should be able to manage account services from the Parabank portal.
 
   Background:
     When customer logs in with registered credentials
-@UI @smokeAccSer
-  Scenario: Customer should be able to create a checking account
-    Given customer clicks on Open New Account
-    Then customer should be on the open account page
-    Then customer customer selects checking account dropdown
-    And  customer selects an existing account to fund the new account
-    When customer clicks create account button
-    Then the new account should be created successfully
-    And a new checking account should be created for the customer in the database
+
+  Scenario: Customer opens a checking account
+    When the customer navigates to Open New Account
+    Then the Open New Account page should be displayed
+    And the customer selects Checking as the account type
+    And the customer selects an existing funding account
+    And the customer submits the open account request
+    Then the new checking account should be displayed in the UI
