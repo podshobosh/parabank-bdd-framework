@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.parabank</groupId>
-    <artifactId>parabank-bdd-framework</artifactId>
+    <groupId>com.digitalbanking</groupId>
+    <artifactId>digital-banking-automation-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>Java test automation framework for UI, API, and database integration testing with Selenium, Cucumber, REST-Assured, JDBC, Maven, and CI reporting.</description>
 

@@ -1,6 +1,6 @@
-# Parabank Test Automation Framework
+# Digital Banking Automation Framework
 
-A Java-based automation framework for the Parabank banking demo application. The project demonstrates UI, API, database integration checks, BDD test design, Maven execution, and CI-ready reporting using a maintainable layered structure.
+A Java-based automation framework for a simulated digital banking platform. The project demonstrates UI, API, database integration checks, BDD test design, Maven execution, and CI-ready reporting using a maintainable layered structure.
 
 ## Tech stack
 
@@ -12,7 +12,7 @@ A Java-based automation framework for the Parabank banking demo application. The
 - JDBC / SQL for targeted data consistency checks
 - Maven
 - Jenkins Pipeline
-- Docker-hosted Parabank test environment
+- Docker-hosted banking simulation test environment
 
 ## What this framework demonstrates
 
